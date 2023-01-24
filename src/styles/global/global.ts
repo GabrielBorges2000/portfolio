@@ -6,13 +6,16 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
+
     :focus {
         outline: 0;
     }
+
     body {      
         -webkit-font-smoothing: antialiased;
         font-family: 'Poppins', sans-serif;
     }
+
     button {
         cursor: pointer;
         border: 0;
@@ -21,6 +24,5 @@ export const GlobalStyle = createGlobalStyle`
 
     [disabled] {
         cursor: not-allowed;
-
     }
 `;

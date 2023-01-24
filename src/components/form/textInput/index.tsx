@@ -4,10 +4,10 @@ import {
 Container,
 } from './styles';
 
-export default function Header() {
+export default function TextInput() {
     return (
         <Container>
-            <h1>Teste</h1>
+
         </Container>
     )
 }
