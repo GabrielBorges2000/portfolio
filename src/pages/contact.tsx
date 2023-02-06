@@ -1,7 +1,8 @@
 import React from 'react';
+import { Text } from '../components/form/text';
 
 export default function Contact() {
     return (
-        <h1>contact</h1>
+        <Text title="Contato" top={200} />
     )
 }

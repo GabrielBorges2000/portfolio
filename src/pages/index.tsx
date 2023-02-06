@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { Text } from '../components/form/text';
 import { Container } from '../styles/styles/home';
 
 export default function Home() {
@@ -7,9 +8,6 @@ export default function Home() {
     <Head>
       <title>Home</title>
     </Head>
-      <Container>
-
-      </Container>
     </>
   )
 }

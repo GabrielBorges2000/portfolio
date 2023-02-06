@@ -1,7 +1,8 @@
 import React from 'react';
+import { Text } from '../components/form/text';
 
 export default function Project() {
     return (
-        <h1>project</h1>
+        <Text title="Projetos" top={200} />
     )
 }

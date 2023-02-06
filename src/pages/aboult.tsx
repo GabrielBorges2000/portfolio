@@ -1,8 +1,9 @@
 import React from 'react';
+import { Text } from '../components/form/text';
 
 
 export default function Aboult() {
     return (
-       <h1>aboult</h1>
+        <Text title="Sobre mim" top={200} />
     )
 }

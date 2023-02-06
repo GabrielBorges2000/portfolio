@@ -9,7 +9,6 @@ export const Container = styled.header`
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    position: fixed;    
 
 
     background-color: ${({ theme }) => theme.white};

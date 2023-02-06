@@ -53,8 +53,8 @@ export default function Header() {
                 </Arrow>
 
                 {nav.map((nav) => (
-                    <Link href={nav.href}>
-                        <Page>{nav.page}</Page>
+                    <Link href={nav.href} key={nav.page}>
+                        <Page >{nav.page}</Page>
                     </Link>
                 ))}
             </Nav>
@@ -64,7 +64,7 @@ export default function Header() {
                         <ArrowFatLinesRight size={32} />
                     </Arrow>
                     {nav.map((nav) => (
-                        <Link href={nav.href}>
+                        <Link href={nav.href} key={nav.page}>
                             <Page>{nav.page}</Page>
                         </Link>
                     ))}

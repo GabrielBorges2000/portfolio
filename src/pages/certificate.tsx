@@ -1,7 +1,9 @@
-import React from 'react';
+import { Text } from "../components/form/text";
 
 export default function Certificate() {
     return (
-        <h1>certificate</h1>
+        <>
+            <Text title="Certificado" top={200}/>
+        </>
     )
 }
