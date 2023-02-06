@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import logo from '../../assets/logo.png';
 import { ArrowFatLinesRight, List } from 'phosphor-react';
@@ -14,6 +14,29 @@ import {
 } from './styles';
 import Link from 'next/link';
 
+const nav = [
+    {
+        href: '/',
+        page: 'Home'
+    },
+    {
+        href: 'aboult',
+        page: 'Sobre mim'
+    },
+    {
+        href: 'project',
+        page: 'Projetos'
+    },
+    {
+        href: 'contact',
+        page: 'Contatos'
+    },
+    {
+        href: 'certificate',
+        page: 'Certificados'
+    }
+];
+
 export default function Header() {
     const [sidebar, setSidebar] = useState(false);
     const handleSidebar = () => {
@@ -23,47 +46,28 @@ export default function Header() {
     return (
         <Container>
             <Image src={logo} width={50} height={50} alt='Símbolo de uma teg fagmente que representa um código.' />
-            
+
             <Nav>
                 <Arrow onClick={handleSidebar}>
                     <ArrowFatLinesRight size={32} />
                 </Arrow>
-                <Link href={'/'}>
-                    <Page>Home</Page>
-                </Link>
-                <Link href={'aboult'}>
-                    <Page>Sobre mim</Page>
-                </Link>
-                <Link href={'aboult'}>
-                    <Page>Projetos</Page>
-                </Link>
-                <Link href={'contact'}>
-                    <Page>Contato</Page>
-                </Link>
-                <Link href={'certificate'}>
-                    <Page>Certificação</Page>
-                </Link >
+
+                {nav.map((nav) => (
+                    <Link href={nav.href}>
+                        <Page>{nav.page}</Page>
+                    </Link>
+                ))}
             </Nav>
             {sidebar &&
                 <NavHidden>
                     <Arrow onClick={handleSidebar}>
                         <ArrowFatLinesRight size={32} />
                     </Arrow>
-                    <Link href={'/'}>
-                        <Page>Home</Page>
-                    </Link>
-                    <Link href={'aboult'}>
-                        <Page>Sobre mim</Page>
-                    </Link>
-                    <Link href={'aboult'}>
-                        <Page>Projetos</Page>
-                    </Link>
-                    <Link href={'contact'}>
-                        <Page>Contato</Page>
-                    </Link>
-                    <Link href={'certificate'}>
-                        <Page>Certificação</Page>
-                    </Link >
+                    {nav.map((nav) => (
+                        <Link href={nav.href}>
+                            <Page>{nav.page}</Page>
+                        </Link>
+                    ))}
                 </NavHidden>
             }
 
