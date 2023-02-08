@@ -1,7 +1,6 @@
-import styled from "styled-components";
-
 export const theme = {
         black: '#000',
+        blackground: '#121214',
         white: '#fff',
 
         blue_50: '#9DF1DF', 
@@ -17,5 +16,6 @@ export const theme = {
         shadow: ' 0 5px 7px 0 rgba(0, 0, 0, 0.24), 0 5px 20px 0 rgba(0, 0, 0, 0.19)',
 
         yellow_100: '#ffd697',
+
 } as const;
 

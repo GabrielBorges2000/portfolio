@@ -15,12 +15,14 @@ export const Container = styled.header`
     box-shadow: ${({ theme }) => theme.shadow};
 
     z-index: 2;
+    position: fixed;
+    left: 0;
+    top: 0;
 
     @media screen and (max-width: 768px){
         justify-content: space-between;
         padding: 20px 50px;     
     } 
-
 `;
 
 export const Nav = styled.div`

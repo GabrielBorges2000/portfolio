@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import logo from '../../assets/logo.png';
 import { ArrowFatLinesRight, List } from 'phosphor-react';
+import Link from 'next/link';
 
 import {
     Arrow,
@@ -12,7 +13,7 @@ import {
     Overlay,
     Page,
 } from './styles';
-import Link from 'next/link';
+
 
 const nav = [
     {
@@ -39,9 +40,9 @@ const nav = [
 
 export default function Header() {
     const [sidebar, setSidebar] = useState(false);
-    const handleSidebar = () => {
-        setSidebar(!sidebar)
-    }
+    const handleSidebar = () => setSidebar(!sidebar);
+
+
 
     return (
         <Container>

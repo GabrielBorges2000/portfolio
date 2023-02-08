@@ -2,11 +2,8 @@ import styled, { css } from 'styled-components';
 //import styled from 'styled-components/native';
 
 type Props = {
-    color?: string;
-    weight?: string;
     top?: number;
-    bottom?: number;
-    size?: number;
+    fontSize: 'lg' | 'slg' | 'md' | 'sm';
 }
 
 export const Container = styled.div`
@@ -14,17 +11,31 @@ export const Container = styled.div`
     flex-direction: column;
 `;
 
-export const Title = styled.p<Props>`
-    margin-top: 0;
-    margin-bottom: 0;
-    color: ${({theme}) => theme.gray_200};    
+export const TitleStyle = styled.p<Props>`
+    color: ${({color}) => color};   
+
+    strong, b {
+        font-weight: 700;
+    }
+
     font-weight: 500;
-    font-size: 12px;
+        ${({ fontSize }) => {
+        switch (fontSize) {
+            case 'lg':
+                return css`
+                    font-size: 20px;
+                `
+            case 'md':
+                return css`
+                    font-size: 16px;
+                `
+            case 'sm':
+                return css`
+                    font-size: 14px;
+                `
+        }
+    }}
 
     ${({ top }) => top && css` margin-top: ${top}px; `};
-    ${({ bottom }) => bottom && css` margin-buttom: ${bottom}px; `};
-    ${({ color }) => color && css` color: ${color}; `};
-    ${({ weight }) => weight && css` font-weight: ${weight}; `};
-    ${({ size }) => size && css` font-size: ${size}px; `};
 
 `;

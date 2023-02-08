@@ -1,10 +1,11 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
     }
 
     :focus {
@@ -13,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
 
     body {      
         -webkit-font-smoothing: antialiased;
-        font-family: 'Poppins', sans-serif;
+        
     }
 
     button {
@@ -25,4 +26,12 @@ export const GlobalStyle = createGlobalStyle`
     [disabled] {
         cursor: not-allowed;
     }
+
+    a {
+        text-decoration: none;
+    }
+`;
+
+export const Main = styled.main`
+    margin: 80px 0;    
 `;
