@@ -4,6 +4,6 @@ import { Text } from '../components/form/text';
 
 export default function Aboult() {
     return (
-        <Text title="Sobre mim"/>
+        <Text title="Sobre mim" fontSize='md'/>
     )
 }

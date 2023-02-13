@@ -9,10 +9,15 @@ import { Text } from '../components/form/text';
 
 const project = [
     {
-        name: 'calculadora',
-        page: 'page1',
+        name: 'Calculadora',
+        page: 'calculator',
         img: img
-    }
+    },
+    {
+        name: 'Creator de Listas',
+        page: 'list',
+        img: img
+    },
 ]
 
 export default function Project() {
@@ -36,9 +41,9 @@ export default function Project() {
 
 
             {project.map((project) => (
-                <Link href={project.page} >
+                <Link href={project.page} key={project.page}>
                     <Image src={project.img} alt={project.name} />
-                    <Text title='calculadora' fontSize='lg' color={theme.gray_300}/>
+                    <Text title={project.name} fontSize='lg' color={theme.gray_300}/>
                 </Link>                    
             ))}
         </>
