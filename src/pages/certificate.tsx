@@ -8,10 +8,11 @@ import image1 from "../certificate/devlinks.jpg"
 import image2 from "../certificate/conectar.jpg"
 import image3 from "../certificate/fundamentar.jpg"
 import image4 from "../certificate/especializar.jpg"
-// import image5 from "../certificate/.jpg"
-// import image6 from "../certificate/.jpg"
-// import image7 from "../certificate/.jpg"
-// import image8 from "../certificate/.jpg"
+import image5 from "../certificate/introducao_dnc.jpg"
+import image6 from "../certificate/introducao_dio.jpg"
+import image7 from "../certificate/react_app.jpg"
+import image8 from "../certificate/react_native.jpg"
+import { useEffect, useState } from "react";
 // import image9 from "../certificate/.jpg"
 // import image10 from "../certificate/.jpg"
 // import image11 from "../certificate/.jpg"
@@ -35,40 +36,65 @@ type Props = {
     name: string;
 }
 
+const certificateImage = [
+    {
+        image: image1,
+        name: 'DevLinks - Rocktseat.'
+    },
+    {
+        image: image2,
+        name: 'Conectar - Rocktseat.'
+    },
+    {
+        image: image3,
+        name: 'Fundamentar - Rocktseat.'
+    },
+    {
+        image: image4,
+        name: 'Especializar - Rocktseat.'
+    },
+    {
+        image: image5,
+        name: 'introdução ao HTML e CSS - DNC.'
+    },
+    {
+        image: image6,
+        name: 'introdução ao HTML e CSS - DIO.'
+    },
+    {
+        image: image7,
+        name: 'Criação de projetos ReactJS - DIO.'
+    },
+    {
+        image: image8,
+        name: 'Criação de projetos React Native e componentes - DIO.'
+    },
+] as Props[];
+
 export default function Certificate() {
     const theme = useTheme();
-    const certificateImage = [
-        {
-            image: image1,
-            name: 'DevLinks Rocktseat'
-        },
-        {
-            image: image2,
-            name: 'Conectar Rocktseat'
-        },
-        {
-            image: image3,
-            name: 'Fundamentar Rocktseat'
-        },
-        {
-            image: image4,
-            name: 'Especializar Rocktseat'
-        },
-    ] as Props[];
+    const [count, setCount] = useState(0);
 
+    useEffect(() => {
+        setTimeout(() => {
+            setCount(certificateImage.length);
+        });
+    }, [certificateImage]);    
 
     return (
         <Container>
             <Title title='Certificações' fontSize='lg' tag='h2' color={theme.blue_100} />
 
+            <Text title={`Total de Certificações: ${count}`} fontSize="lg" />
+
             {
                 certificateImage.map((certificateImage) => {
                     return (
                         <CertificateContainer key={certificateImage.name}>
-                            <div>
-                                <Image src={certificateImage.image} alt={certificateImage.name} width={300} height={200} />
+                            <>
+                                <Image src={certificateImage.image} alt={certificateImage.name} />
                                 <Text title={certificateImage.name} fontSize='sm' />
-                            </div>
+                            </>
                         </CertificateContainer>
                     )
                 })
