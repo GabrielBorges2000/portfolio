@@ -6,6 +6,7 @@ import { Title } from '../components/form/title/styles';
 import img from '../assets/logo.png'
 import Link from 'next/link';
 import { Text } from '../components/form/text';
+import { Container } from '../styles/styles/project';
 
 const project = [
     {
@@ -23,20 +24,21 @@ const project = [
 export default function Project() {
     const theme = useTheme();
     return (
-        <>
+        <Container>
             <Title
                 tag='h3'
                 fontSize='slg'
                 fontWeight={700}
                 color={theme.blue_100}
-                title='Bem vindo aos Projetos!'
+                title='Meus Projetos'
             />
             <Title
                 tag='h6'
                 fontSize='md'
                 fontWeight={700}
                 color={theme.blue_600}
-                title='Aqui você irá ver projetos desenvolvidos dentro do mesmo projeto do Portfólio e projetos que hospedei em servidores, mas não se assuste você terá uma ótima expêriencia de usuário!'
+                title='Aqui você irá encontrar projetos internos e externos do meu portfólio!'
+                
             />
 
 
@@ -46,6 +48,6 @@ export default function Project() {
                     <Text title={project.name} fontSize='lg' color={theme.gray_300}/>
                 </Link>                    
             ))}
-        </>
+        </Container>
     )
 }
