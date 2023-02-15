@@ -22,7 +22,7 @@ export default function Contact() {
             text: "(11) 98623-7504"
         },
         {
-            title: "celular para Whatsapp",
+            title: "celular para Whatsapp:",
             icon: <WhatsappLogo size={24} color={theme.green} weight='duotone' />,
             text: "(11) 93435-4029"
         }
