@@ -8,7 +8,7 @@ interface ListItem {
     time: string;
 }
 
-export default function List () {
+export default function List() {
     const [list, setList] = useState<ListItem[]>([]);
     const [item, setItem] = useState("");
     const [count, setCount] = useState(0);
@@ -19,6 +19,7 @@ export default function List () {
             time: new Date().toLocaleTimeString("pt-br", {
                 hour: "2-digit",
                 minute: "2-digit",
+                second: '2-digit'
             }),
         };
         setList([...list, newItem]);
@@ -38,13 +39,16 @@ export default function List () {
                 fontSize="slg"
                 fontWeight={700}
                 // color={theme.blue_100}
-                title="Crie sua lista"
+                title="Lista de Chamada"
             />
-            <Text title={`Total de itens: ${count}`} fontSize="lg" />
+            <Text title={`Alunos Presentes: ${count}`} fontSize="lg" />
 
             <InputContainer>
                 <Input
+
                     type="text"
+                    maxLength={50}
+                    placeholder='Nome do aluno'
                     value={item}
                     onChange={(event) => setItem(event.target.value)}
                 />
@@ -54,7 +58,7 @@ export default function List () {
             {list.map((listItem, count) => {
                 return (
                     <Item key={count + 1}>
-                        {listItem.item} - {listItem.time}
+                        <p>{listItem.item}</p>  <p>{listItem.time}</p>
                     </Item>
                 );
             })}
