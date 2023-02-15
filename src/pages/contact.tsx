@@ -28,7 +28,7 @@ export default function Contact() {
         }
     ];
 
-    
+
     return (
         <Container>
             <Title title='Contato' fontSize='lg' tag='h2' color={theme.blue_100} />
@@ -36,13 +36,13 @@ export default function Contact() {
             {
                 contact.map((contact) => {
                     return (
-                        <>
+                        <div key={contact.text}>
                             <Text title={contact.title} fontSize='md' />
                             <IconAndTitle>
                                 {contact.icon}
                                 <Text title={contact.text} fontSize='md' />
                             </IconAndTitle>
-                        </>
+                        </div>
                     )
                 })
             }
