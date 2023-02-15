@@ -25,28 +25,18 @@ export default function Project() {
     const theme = useTheme();
     return (
         <Container>
+            <Title title='Meus Projetos' fontSize='lg' tag='h2' color={theme.blue_100} />
             <Title
-                tag='h3'
-                fontSize='slg'
-                fontWeight={700}
-                color={theme.blue_100}
-                title='Meus Projetos'
-            />
-            <Title
-                tag='h6'
-                fontSize='md'
-                fontWeight={700}
-                color={theme.blue_600}
                 title='Aqui você irá encontrar projetos internos e externos do meu portfólio!'
-                
+                tag='h6' fontSize='md' fontWeight={700} color={theme.blue_600} 
             />
 
 
             {project.map((project) => (
                 <Link href={project.page} key={project.page}>
                     <Image src={project.img} alt={project.name} />
-                    <Text title={project.name} fontSize='lg' color={theme.gray_300}/>
-                </Link>                    
+                    <Text title={project.name} fontSize='lg' color={theme.gray_300} />
+                </Link>
             ))}
         </Container>
     )
