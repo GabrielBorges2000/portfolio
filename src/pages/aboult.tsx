@@ -24,7 +24,7 @@ export default function Aboult() {
         },
         {   
             id: '4',
-            text: "Atualmente eu moro sozinho e tenho um objetivo de ter uma estabilidade finaceira e se posivel ter uma vaga no exterior, estudo inglês com muita frequência, inclusive eu consigo escutar, ler, escrever o básico, porém tenho dificuldade em conversação."
+            text: "Atualmente eu moro sozinho e tenho um objetivo de ter uma estabilidade financeira e aberto a vagas no exterior, estudo inglês com frequência, inclusive eu consigo escutar, ler, escrever o básico, porém tenho dificuldade em conversação."
         }
     ];
 

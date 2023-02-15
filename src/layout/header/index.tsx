@@ -65,7 +65,7 @@ export default function Header() {
                         <ArrowFatLinesRight size={32} />
                     </Arrow>
                     {nav.map((nav) => (
-                        <Link href={nav.href} key={nav.page}>
+                        <Link href={nav.href} key={nav.page} onClick={handleSidebar}>
                             <Page>{nav.page}</Page>
                         </Link>
                     ))}
