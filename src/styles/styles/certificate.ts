@@ -19,7 +19,12 @@ export const Container = styled.div`
     }    
 `;
 
-export const IconAndTitle = styled.div`
+export const CertificateContainer = styled.div`
     display: flex;
-    gap: 10px;
+    justify-content: center;
+
+    img {
+        
+    }
+
 `;
