@@ -15,7 +15,7 @@ export const theme = {
 
         pink_300: '#ea4c89', 
 
-        shadow: ' 0 5px 7px 0 rgba(0, 0, 0, 0.24), 0 5px 20px 0 rgba(0, 0, 0, 0.19)',
+        shadow: ' 0 2px 7px 0 rgba(0, 0, 0, 0.10), 0 3px 5px 0 rgba(0, 0, 0, 0.19)',
 
         yellow_100: '#ffd697',
 

@@ -18,7 +18,7 @@ export default function Calculator() {
         setOperation('')
     }
 
-    const handleSumeNumber = () => {
+    const handleSomeNumber = () => {
 
         if (firstNumber === '0') {
             setFirstNumber(String(currentNumber));
@@ -75,7 +75,7 @@ export default function Calculator() {
         if (firstNumber !== '0' && operation !== '' && currentNumber !== '0') {
             switch (operation) {
                 case '+':
-                    handleSumeNumber();
+                    handleSomeNumber();
                     break;
                 case '-':
                     handleMinusNumber();
@@ -110,7 +110,7 @@ export default function Calculator() {
                     <ButtonCalculador title='4' onClick={() => handleAddNumber('4')} />
                     <ButtonCalculador title='5' onClick={() => handleAddNumber('5')} />
                     <ButtonCalculador title='6' onClick={() => handleAddNumber('6')} />
-                    <ButtonCalculador title='+' onClick={handleSumeNumber} />
+                    <ButtonCalculador title='+' onClick={handleSomeNumber} />
                 </Row>
                 <Row>
                     <ButtonCalculador title='1' className='border1' onClick={() => handleAddNumber('1')} />

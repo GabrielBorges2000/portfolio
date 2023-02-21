@@ -49,7 +49,9 @@ export const NavHidden = styled.div`
 
     @media screen and (max-width: 768px){
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+
+        padding-left: 18px;
 
         padding-top: 30px;
 
@@ -85,6 +87,15 @@ export const Arrow = styled.button`
 
 export const Page = styled.p`
     color: ${({ theme }) => theme.blue_100};
+
+    display: flex;
+    gap: 10px;
+
+    font-size: 20px;
+
+    @media(max-width: 768px){
+        font-size: 18px;
+    }
 `;
 
 export const Button = styled.button`

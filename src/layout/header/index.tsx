@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import logo from '../../assets/logo.png';
-import { ArrowFatLinesRight, List } from 'phosphor-react';
+import { AddressBook, ArrowFatLinesRight, BookBookmark, HouseLine, List, ProjectorScreenChart, UserCircle, X } from 'phosphor-react';
 import Link from 'next/link';
 
 import {
@@ -14,27 +14,37 @@ import {
     Page,
 } from './styles';
 
-
 const nav = [
+
     {
         href: '/',
-        page: 'Home'
+        page: 'Home',
+        icon: <HouseLine size={24} weight='duotone'/>
     },
     {
         href: 'aboult',
-        page: 'Sobre mim'
+        page: 'Sobre mim',
+        icon: <UserCircle size={24} weight='duotone' />
     },
     {
         href: 'project',
-        page: 'Projetos'
+        page: 'Projetos',
+        icon: <ProjectorScreenChart size={24} weight='duotone' />
     },
     {
         href: 'contact',
-        page: 'Contatos'
+        page: 'Contatos',
+        icon: <AddressBook size={24} weight='duotone' />
     },
     {
         href: 'certificate',
-        page: 'Certificados'
+        page: 'Certificados',
+        icon: <BookBookmark size={24} weight='duotone' />
+    },
+    {
+        href: '',
+        page: 'Fechar',
+        icon: <X size={24} weight='bold' />
     }
 ];
 
@@ -42,17 +52,13 @@ export default function Header() {
     const [sidebar, setSidebar] = useState(false);
     const handleSidebar = () => setSidebar(!sidebar);
 
-
-
     return (
         <Container>
+            <Link href={'/'}>
             <Image src={logo} width={50} height={50} alt='Símbolo de uma teg fagmente que representa um código.' />
+            </Link>
 
             <Nav>
-                <Arrow onClick={handleSidebar}>
-                    <ArrowFatLinesRight size={32} />
-                </Arrow>
-
                 {nav.map((nav) => (
                     <Link href={nav.href} key={nav.page}>
                         <Page >{nav.page}</Page>
@@ -61,12 +67,13 @@ export default function Header() {
             </Nav>
             {sidebar &&
                 <NavHidden>
-                    <Arrow onClick={handleSidebar}>
-                        <ArrowFatLinesRight size={32} />
-                    </Arrow>
                     {nav.map((nav) => (
                         <Link href={nav.href} key={nav.page} onClick={handleSidebar}>
-                            <Page>{nav.page}</Page>
+                            <div key={nav.page}>
+                                
+                                <Page>{nav.icon}{nav.page}</Page>
+                            </div>
+
                         </Link>
                     ))}
                 </NavHidden>
