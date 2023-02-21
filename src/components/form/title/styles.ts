@@ -10,9 +10,21 @@ export const Title = styled(TitleComponent)`
 
     ${({ fontSize }) => {
         switch (fontSize) {
+            case 'xlg':
+                return css`
+                    font-size: 50px;
+                    @media (max-width: 800px) {
+                        font-size: 46px;
+                    }
+                
+                `
             case 'lg':
                 return css`
-                    font-size: 44px;
+                    font-size: 40px;
+                    @media (max-width: 800px) {
+                        font-size: 36px;
+                    }
+
                     @media (max-width: 800px) {
                         font-size: 36px;
                     }

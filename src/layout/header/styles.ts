@@ -47,6 +47,8 @@ export const NavHidden = styled.div`
 
     font-weight: bold;
 
+    
+
     @media screen and (max-width: 768px){
         flex-direction: column;
         align-items: flex-start;
@@ -56,7 +58,7 @@ export const NavHidden = styled.div`
         padding-top: 30px;
 
         width: 200px;
-        height: 100vh;
+        height: 110vh;
 
         position: absolute;
         right: 0;
@@ -115,7 +117,7 @@ export const Button = styled.button`
 
 export const Overlay = styled.div`
     width: 100vw;
-    height: 100vh;
+    height: 110vh;
     left: 0;
     top: 0;
 

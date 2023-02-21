@@ -7,7 +7,7 @@ type Props = {
     title: string;
     tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     fontWeight?: 400 | 700;
-    fontSize: 'lg' | 'slg' | 'md' | 'sm';
+    fontSize: 'xlg' | 'lg' | 'slg' | 'md' | 'sm';
     opacity?: number;
 }
 

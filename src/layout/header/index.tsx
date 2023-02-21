@@ -19,7 +19,7 @@ const nav = [
     {
         href: '/',
         page: 'Home',
-        icon: <HouseLine size={24} weight='duotone'/>
+        icon: <HouseLine size={24} weight='duotone' />
     },
     {
         href: 'aboult',
@@ -40,11 +40,6 @@ const nav = [
         href: 'certificate',
         page: 'Certificados',
         icon: <BookBookmark size={24} weight='duotone' />
-    },
-    {
-        href: '',
-        page: 'Fechar',
-        icon: <X size={24} weight='bold' />
     }
 ];
 
@@ -55,7 +50,7 @@ export default function Header() {
     return (
         <Container>
             <Link href={'/'}>
-            <Image src={logo} width={50} height={50} alt='Símbolo de uma teg fagmente que representa um código.' />
+                <Image src={logo} width={50} height={50} alt='Símbolo de uma teg fagmente que representa um código.' />
             </Link>
 
             <Nav>
@@ -70,12 +65,15 @@ export default function Header() {
                     {nav.map((nav) => (
                         <Link href={nav.href} key={nav.page} onClick={handleSidebar}>
                             <div key={nav.page}>
-                                
+
                                 <Page>{nav.icon}{nav.page}</Page>
                             </div>
-
                         </Link>
                     ))}
+                    <Page onClick={handleSidebar} >
+                        <X size={24} weight='bold' />
+                        Fechar
+                    </Page>
                 </NavHidden>
             }
 
