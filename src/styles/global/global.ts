@@ -32,5 +32,5 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const Main = styled.main`
-    margin: 80px 0;    
+    margin: 110px 0;    
 `;
