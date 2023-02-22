@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import logo from '../../assets/logo.png';
-import { AddressBook, ArrowFatLinesRight, BookBookmark, HouseLine, List, ProjectorScreenChart, UserCircle, X } from 'phosphor-react';
+import { AddressBook, ArrowFatLinesRight, Barricade, BookBookmark, HouseLine, List, ProjectorScreenChart, UserCircle, X } from 'phosphor-react';
 import Link from 'next/link';
 
 import {
     Arrow,
     Button,
     Container,
+    Dev,
     Nav,
     NavHidden,
     Overlay,
     Page,
 } from './styles';
+import { Text } from '../../components/form/text';
 
 const nav = [
 
@@ -43,11 +45,21 @@ const nav = [
     }
 ];
 
+const barricada = [
+    { 
+        icon: <Barricade size={32} color="#020203" weight="duotone" /> 
+    }
+];
+
 export default function Header() {
     const [sidebar, setSidebar] = useState(false);
-    const handleSidebar = () => setSidebar(!sidebar);
+    const handleSidebar = () => setSidebar(!sidebar);    
 
     return (
+        <>
+            <Dev className='dev'>
+                < Barricade size={32} color="#020203" weight="duotone" /> <Text title=' Em desenvolvimento' fontSize='md' />
+            </Dev>
         <Container>
             <Link href={'/'}>
                 <Image src={logo} width={50} height={50} alt='Símbolo de uma teg fagmente que representa um código.' />
@@ -83,5 +95,6 @@ export default function Header() {
 
             {sidebar && <Overlay onClick={handleSidebar} />}
         </Container>
+        </>
     )
 }

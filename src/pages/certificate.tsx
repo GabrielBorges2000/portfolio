@@ -24,11 +24,7 @@ import image16 from "../certificate/dom.jpg"
 import image17 from "../certificate/map_filter_reducer.jpg"
 import image18 from "../certificate/pensamento_computacional.jpg"
 import image19 from "../certificate/lider_coach.jpg"
-import image20 from "../certificate/empreendedor.jpg"
-import image21 from "../certificate/photoshop.jpg"
-// import image22 from "../certificate/.jpg"
-// import image23 from "../certificate/.jpg"
-// import image24 from "../certificate/.jpg"
+import image20 from "../certificate/photoshop.jpg"
 
 
 type Props = {
@@ -71,55 +67,51 @@ const certificateImage = [
     },
     {
         image: image9,
-        name: 'Criação de projetos React Native e componentes - DIO.'
+        name: 'Configurando ambiente React  - DIO.'
     },
     {
         image: image10,
-        name: 'Criação de projetos React Native e componentes - DIO.'
+        name: 'Primeiros passos no React - DIO.'
     },
     {
         image: image11,
-        name: 'Criação de projetos React Native e componentes - DIO.'
+        name: 'Instalação do VSCode - DIO.'
     },
     {
         image: image12,
-        name: 'Criação de projetos React Native e componentes - DIO.'
+        name: 'Lógica de programação - DIO.'
     },
     {
         image: image13,
-        name: 'Criação de projetos React Native e componentes - DIO.'
+        name: 'Fundamentos React - DIO.'
     },
     {
         image: image14,
-        name: 'Criação de projetos React Native e componentes - DIO.'
+        name: 'Página Web com HTML - DIO.'
     },
     {
         image: image15,
-        name: 'Criação de projetos React Native e componentes - DIO.'
+        name: 'Interação com JavaScript na Web - DIO.'
     },
     {
         image: image16,
-        name: 'Criação de projetos React Native e componentes - DIO.'
+        name: 'Entendendo a DOM - DIO.'
     },
     {
         image: image17,
-        name: 'Criação de projetos React Native e componentes - DIO.'
+        name: 'Map, filer e Reducer - DIO.'
     },
     {
         image: image18,
-        name: 'Criação de projetos React Native e componentes - DIO.'
+        name: 'Pensamento computacional - DIO.'
     },
     {
         image: image19,
-        name: 'Criação de projetos React Native e componentes - DIO.'
+        name: 'Líder Coach - Sebrae.'
     },
     {
         image: image20,
-        name: 'Criação de projetos React Native e componentes - DIO.'
-    },
-    {
-        image: image21,
-        name: 'Criação de projetos React Native e componentes - DIO.'
+        name: 'Adobe Photoshop - Arquitettar.'
     },
 ] as Props[];
 
