@@ -1,24 +1,6 @@
 import styled from 'styled-components';
 
-export const Dev = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 100%;
-    height: 30px;
-    color: black;
-    background-color: yellow;
-    gap: 10px;
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    left: 0;
-
-`;
-
 export const Container = styled.header`
-    margin-top: 30px;
     width: 100%;
     height: 80px;
 

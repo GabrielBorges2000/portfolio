@@ -8,7 +8,6 @@ import {
     Arrow,
     Button,
     Container,
-    Dev,
     Nav,
     NavHidden,
     Overlay,
@@ -46,55 +45,52 @@ const nav = [
 ];
 
 const barricada = [
-    { 
-        icon: <Barricade size={32} color="#020203" weight="duotone" /> 
+    {
+        icon: <Barricade size={32} color="#020203" weight="duotone" />
     }
 ];
 
 export default function Header() {
     const [sidebar, setSidebar] = useState(false);
-    const handleSidebar = () => setSidebar(!sidebar);    
+    const handleSidebar = () => setSidebar(!sidebar);
 
     return (
         <>
-            <Dev className='dev'>
-                < Barricade size={32} color="#020203" weight="duotone" /> <Text title=' Em desenvolvimento' fontSize='md' />
-            </Dev>
-        <Container>
-            <Link href={'/'}>
-                <Image src={logo} width={50} height={50} alt='Símbolo de uma teg fagmente que representa um código.' />
-            </Link>
+            <Container>
+                <Link href={'/'}>
+                    <Image src={logo} width={50} height={50} alt='Símbolo de uma teg fagmente que representa um código.' />
+                </Link>
 
-            <Nav>
-                {nav.map((nav) => (
-                    <Link href={nav.href} key={nav.page}>
-                        <Page >{nav.page}</Page>
-                    </Link>
-                ))}
-            </Nav>
-            {sidebar &&
-                <NavHidden>
+                <Nav>
                     {nav.map((nav) => (
-                        <Link href={nav.href} key={nav.page} onClick={handleSidebar}>
-                            <div key={nav.page}>
-
-                                <Page>{nav.icon}{nav.page}</Page>
-                            </div>
+                        <Link href={nav.href} key={nav.page}>
+                            <Page >{nav.page}</Page>
                         </Link>
                     ))}
-                    <Page onClick={handleSidebar} >
-                        <X size={24} weight='bold' />
-                        Fechar
-                    </Page>
-                </NavHidden>
-            }
+                </Nav>
+                {sidebar &&
+                    <NavHidden>
+                        {nav.map((nav) => (
+                            <Link href={nav.href} key={nav.page} onClick={handleSidebar}>
+                                <div key={nav.page}>
 
-            <Button onClick={handleSidebar} >
-                <List size={32} />
-            </Button>
+                                    <Page>{nav.icon}{nav.page}</Page>
+                                </div>
+                            </Link>
+                        ))}
+                        <Page onClick={handleSidebar} >
+                            <X size={24} weight='bold' />
+                            Fechar
+                        </Page>
+                    </NavHidden>
+                }
 
-            {sidebar && <Overlay onClick={handleSidebar} />}
-        </Container>
+                <Button onClick={handleSidebar} >
+                    <List size={32} />
+                </Button>
+
+                {sidebar && <Overlay onClick={handleSidebar} />}
+            </Container>
         </>
     )
 }
