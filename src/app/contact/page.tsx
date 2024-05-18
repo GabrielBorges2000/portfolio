@@ -1,11 +1,12 @@
 "use client";
-import { Github, Linkedin, Mail } from "lucide-react"
-import Link from "next/link"
-import { Navigation } from "../components/nav"
-import { Card } from "../components/card"
-import Particles from "../components/particles";
+import { Github, Linkedin, Mail } from "lucide-react";
+import Link from "next/link";
+import { Navigation } from "../../components/nav";
+import { Card } from "../../components/card";
+import Particles from "../../components/particles";
 import { socials } from "../page";
 import Image from "next/image";
+import { transformePhone } from "@/src/util/transforme-phone";
 
 export default function Contact() {
 	return (
@@ -17,7 +18,7 @@ export default function Contact() {
 				fill
 				sizes="(min-width: 1920px) 50vw, 100vw"
 				style={{
-					objectFit: 'cover', // cover, contain, none
+					objectFit: "cover", // cover, contain, none
 				}}
 				className="absolute top-0"
 			/>
@@ -37,7 +38,7 @@ export default function Contact() {
 
 				<div className="grid w-full grid-cols-1 gap-8 mx-auto sm:grid-cols-2 lg:grid-cols-4 lg:gap-16">
 					{socials.map((s) => (
-						<Card key={s.handle}>
+						<Card key={s.label.replaceAll(" ", "")}>
 							<Link
 								href={s.href}
 								target="_blank"
@@ -52,7 +53,7 @@ export default function Contact() {
 								</span>{" "}
 								<div className="z-10 flex flex-col items-center">
 									<span className="lg:text-md font-medium duration-150 xl:text-2xl text-zinc-200 group-hover:text-white font-display">
-										{s.handle}
+										{transformePhone(s.handle)}
 									</span>
 									<span className="mt-4 text-sm text-center duration-1000 text-zinc-400 group-hover:text-zinc-200">
 										{s.label}

@@ -1,31 +1,32 @@
 // components/ProjectsList.js
 "use client";
 
-import React from 'react';
-import Link from 'next/link';
-import { Card } from "../components/card";
+import React from "react";
+import Link from "next/link";
+import { Card } from "./card";
 import { Eye } from "lucide-react";
-import type { Repositorios } from '@/src/util/get-user';
+import type { Repositorios } from "@/src/util/get-user";
 
 export function ProjectsList({ projects }: { projects: Array<Repositorios> }) {
 	return (
 		<div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2">
 			{projects.map((project) => (
 				<Card key={project.id}>
-					<Link href={project.project_url} target='_blank'>
+					<Link href={project.project_url} target="_blank">
 						<article className="relative w-full h-full p-4 md:p-8">
 							<div className="flex items-center justify-between gap-2">
 								<div className="text-xs text-zinc-100">
-
 									<time dateTime={new Date(project.created_at).toISOString()}>
-										{Intl.DateTimeFormat('pt-BR', {
+										{Intl.DateTimeFormat("pt-BR", {
 											dateStyle: "medium",
 										}).format(new Date(project.created_at))}
 									</time>
 								</div>
 								<span className="flex items-center gap-1 text-xs text-zinc-500">
 									<Eye className="w-4 h-4" />{" "}
-									{Intl.NumberFormat("pt-BR", { notation: "compact" }).format(project.views ?? 0)}
+									{Intl.NumberFormat("pt-BR", { notation: "compact" }).format(
+										project.views ?? 0,
+									)}
 								</span>
 							</div>
 							<h2
@@ -35,11 +36,11 @@ export function ProjectsList({ projects }: { projects: Array<Repositorios> }) {
 								{project.name}
 							</h2>
 							<p className="mt-4 leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300">
-								{project.description ?? ''}
+								{project.description ?? ""}
 							</p>
 							<div className=" bottom-4 md:bottom-8">
-								<p className=" text-zinc-200 hover:text-zinc-50 lg:block">
-									Read more <span aria-hidden="true">&rarr;</span>
+								<p className=" text-zinc-200 hover:text-zinc-50 lg:block mt-2 ">
+									ver mais <span aria-hidden="true">&rarr;</span>
 								</p>
 							</div>
 						</article>

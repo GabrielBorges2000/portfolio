@@ -1,14 +1,17 @@
-import Link from "next/link";
 import React from "react";
-import { Navigation } from "../components/nav";
-import { Card } from "../components/card";
-import { Eye } from "lucide-react";
+import { Navigation } from "../../components/nav";
 import Image from "next/image";
-import { getUserGitHub } from "@/src/util/get-user";
-import Particles from "../components/particles";
-import { ProjectsList } from "./project-list";
+import {
+	getUserGitHub
+} from "@/src/util/get-user";
+import Particles from "../../components/particles";
+import { ProjectsList } from "../../components/project-list";
 
-const excludedRepositories = ["dona-aguia", "nlw-expert-rn", "GabrielBorges2000"];
+const excludedRepositories = [
+	"dona-aguia",
+	"nlw-expert-rn",
+	"GabrielBorges2000",
+];
 
 const allowedRepositories = [
 	"api-solid",
@@ -19,25 +22,25 @@ const allowedRepositories = [
 	"dev-store-api",
 	"escola-sabatina",
 	"pdv",
-	"podedex-poke-api"
+	"podedex_poke-api",
+	"upload_ai",
 ];
 
 export default async function ProjectsPage() {
+	const { repositorios } = await getUserGitHub();
 
-	const { repositorios } = await getUserGitHub()
-
-	const projectsInitials = repositorios.filter((repo) =>
-		repo.name.includes("dona-aguia") ||
-		repo.name.includes("nlw-expert-rn")
+	const projectsInitials = repositorios.filter(
+		(repo) =>
+			repo.name.includes("dona-aguia") || repo.name.includes("nlw-expert-rn"),
 	);
 
-	const projects = repositorios.filter((repo) =>
-		!excludedRepositories.includes(repo.name) &&
-		allowedRepositories.some(padrao => repo.name.includes(padrao))
+	const projects = repositorios.filter(
+		(repo) =>
+			!excludedRepositories.includes(repo.name) &&
+			allowedRepositories.some((padrao) => repo.name.includes(padrao)),
 	);
 
 	return (
-
 		<div className=" pb-16">
 			<Navigation />
 			<Image
@@ -46,7 +49,7 @@ export default async function ProjectsPage() {
 				fill
 				sizes="(min-width: 1920px) 50vw, 100vw"
 				style={{
-					objectFit: 'cover', // cover, contain, none
+					objectFit: "cover",
 				}}
 				className="absolute top-0"
 			/>
@@ -61,7 +64,9 @@ export default async function ProjectsPage() {
 						Projetos
 					</h2>
 					<p className="mt-4 text-zinc-400">
-						Uma seleção dos meus melhores projetos. Cada um mostra a minha habilidade em desenvolvimento de software em vários níveis e ferramentas.
+						Uma seleção dos meus melhores projetos. Cada um mostra a minha
+						habilidade em desenvolvimento de software em vários níveis e
+						ferramentas.
 					</p>
 				</div>
 				<div className="w-full h-px bg-zinc-800" />

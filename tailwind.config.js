@@ -2,9 +2,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: [
-		"./src/app/**/*.{js,ts,jsx,tsx}",
-	],
+	content: ["./src/**/*.{js,ts,jsx,tsx}"],
 
 	theme: {
 		extend: {
@@ -33,7 +31,8 @@ module.exports = {
 			backgroundImage: {
 				"gradient-radial":
 					"radial-gradient(50% 50% at 50% 50%, var(--tw-gradient-stops))",
-				'gradient-radial-yellow': 'radial-gradient(circle 28rem at 48.3% 27.1%, rgba(255,249,137,1) 7.4%, rgba(226,183,40,1) 80.3%)',
+				"gradient-radial-yellow":
+					"radial-gradient(circle 28rem at 48.3% 27.1%, rgba(255,249,137,1) 7.4%, rgba(226,183,40,1) 80.3%)",
 			},
 			animation: {
 				"fade-in": "fade-in 3s ease-in-out forwards",
