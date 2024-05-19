@@ -3,12 +3,14 @@
 <img src="https://raw.githubusercontent.com/MicaelliMedeiros/micaellimedeiros/master/image/computer-illustration.png" min-width="400px" max-width="400px" width="400px" align="right" alt="Computador iuriCode">
 
 <p align="left"> 
-  Olá eu me chamo Gabriel, Tenho 24 anos e sou programador <strong>Full-Stack</strong>.<br>
+  Olá! Eu sou o Gabriel, desenvolvedor Full-Stack e tenho 24 anos.
 </p>
 <p align="left"> 
-  Como dev meu compromisso é criar solução inovadoras para facilitar a vida das pessoas através da técnologia.
+  Minha paixão está em usar as melhores ferramentas e tecnologias inovadoras para criar soluções que impactem positivamente a vida das pessoas.
 </p>
-
+<p align="left"> 
+   Estou constantemente buscando desafios que me permitam aplicar meu conhecimento em prol do bem-estar e da comodidade dos usuários. Vamos construir algo incrível juntos e fazer a diferença no mundo da tecnologia!
+</p>
 
 
 ## 🚀 Minhas Principais Skills
@@ -57,7 +59,7 @@
 <p align="left">
 
   <a href="https://www.linkedin.com/in/GabrielBorges2000/" target='_blank' alt="Linkedin">
-  <img src="https://img.shields.io/badge/-Linkedin-0e76a8?style=flat-square&logo=Linkedin&logoColor=white&link=LINK-DO-SEU-EMAIL" /></a>
+  <img src="https://img.shields.io/badge/-Linkedin-0e76a8?style=flat-square&logo=Linkedin&logoColor=white&link=gabriel.vscode@mail.com" /></a>
 
 </p> 
 

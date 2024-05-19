@@ -29,8 +29,12 @@ export const getUserGitHub = async (): Promise<GithubUser> => {
         const userDataResponse = await fetch(githubURL, {
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_API_TOKEN}`,
-            }
+                Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_API_TOKEN}`
+            },
+            next:{
+                tags: ['github']
+            },
+            cache:'no-store'
         });
 
         if (!userDataResponse.ok) {
@@ -44,7 +48,11 @@ export const getUserGitHub = async (): Promise<GithubUser> => {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_API_TOKEN}`
-            }
+            },
+            next:{
+                tags: ['github']
+            },
+            cache:'no-store'
         });
 
         const repositoriosPage2Response = await fetch(`${repos_url}?page=2`, {
@@ -52,6 +60,10 @@ export const getUserGitHub = async (): Promise<GithubUser> => {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_API_TOKEN}`
             },
+            next:{
+                tags: ['github']
+            },
+            cache:'no-store'
         });
 
         if (!repositoriosPage1Response.ok || !repositoriosPage2Response.ok) {

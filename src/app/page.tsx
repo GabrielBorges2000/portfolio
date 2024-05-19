@@ -4,7 +4,6 @@ import Particles from "../components/particles";
 import Image from "next/image";
 import { getUserGitHub, type User } from "../util/get-user";
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
-import type { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { transformePhone } from "../util/transforme-phone";
 
 export const navigation = [
