@@ -24,6 +24,7 @@ const allowedRepositories = [
 	"pdv",
 	"podedex_poke-api",
 	"upload_ai",
+	"shorts-summary"
 ];
 
 export default async function ProjectsPage() {
