@@ -3,7 +3,7 @@
 <img src="https://raw.githubusercontent.com/MicaelliMedeiros/micaellimedeiros/master/image/computer-illustration.png" min-width="400px" max-width="400px" width="400px" align="right" alt="Computador iuriCode">
 
 <p align="left"> 
-  Olá! Eu sou o Gabriel, desenvolvedor Full-Stack e tenho 24 anos.
+  Olá eu me chamo Gabriel, tenho 24 anos e sou programador <strong>Full-Stack, UX Designer</strong> e CTO da <strong>CODE BORGES</strong>.<br>
 </p>
 <p align="left"> 
   Minha paixão está em usar as melhores ferramentas e tecnologias inovadoras para criar soluções que impactem positivamente a vida das pessoas.
