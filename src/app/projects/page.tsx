@@ -7,39 +7,8 @@ import {
 import Particles from "../../components/particles";
 import { ProjectsList } from "../../components/project-list";
 
-const excludedRepositories = [
-	"dona-aguia",
-	"nlw-expert-rn",
-	"GabrielBorges2000",
-];
-
-const allowedRepositories = [
-	"api-solid",
-	"beautysalon",
-	"ask-openai",
-	"next-sass-rbac",
-	"dev-store",
-	"dev-store-api",
-	"escola-sabatina",
-	"pdv",
-	"podedex_poke-api",
-	"upload_ai",
-	"shorts-summary"
-];
-
 export default async function ProjectsPage() {
-	const { repositorios } = await getUserGitHub();
-
-	const projectsInitials = repositorios.filter(
-		(repo) =>
-			repo.name.includes("dona-aguia") || repo.name.includes("nlw-expert-rn"),
-	);
-
-	const projects = repositorios.filter(
-		(repo) =>
-			!excludedRepositories.includes(repo.name) &&
-			allowedRepositories.some((padrao) => repo.name.includes(padrao)),
-	);
+	const { repositorios: {repositories, initialRepositories} } = await getUserGitHub();
 
 	return (
 		<div className=" pb-16">
@@ -72,11 +41,11 @@ export default async function ProjectsPage() {
 				</div>
 				<div className="w-full h-px bg-zinc-800" />
 
-				<ProjectsList projects={projectsInitials} />
+				<ProjectsList projects={initialRepositories} />
 
 				<div className="hidden w-full h-px md:block bg-zinc-800" />
 
-				<ProjectsList projects={projects} />
+				<ProjectsList projects={repositories} />
 			</div>
 		</div>
 	);
