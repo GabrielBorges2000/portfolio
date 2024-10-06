@@ -1,41 +1,44 @@
-import "../../global.css";
-import { Inter } from "next/font/google";
-import LocalFont from "next/font/local";
-import { Metadata } from "next";
+import './global.css'
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import LocalFont from 'next/font/local'
 
 export const metadata: Metadata = {
-	title: {
-		default: "codeborges.com.br",
-		template: "%s | codeborges.com.br",
-	},
-	icons: {
-		shortcut: "/favicon.png",
-	},
-};
+    title: {
+        default: 'codeborges.com.br',
+        template: '%s | codeborges.com.br',
+    },
+    icons: {
+        shortcut: '/favicon.png',
+    },
+}
 const inter = Inter({
-	subsets: ["latin"],
-	variable: "--font-inter",
-});
+    subsets: ['latin'],
+    variable: '--font-inter',
+})
 
 const calSans = LocalFont({
-	src: "../../public/fonts/CalSans-SemiBold.ttf",
-	variable: "--font-calsans",
-});
+    src: '../../public/fonts/CalSans-SemiBold.ttf',
+    variable: '--font-calsans',
+})
 
 export default function RootLayout({
-	children,
+    children,
 }: {
-	children: React.ReactNode;
+    children: React.ReactNode
 }) {
-	return (
-		<html lang="pt-BR" className={[inter.variable, calSans.variable].join(" ")}>
-			<body
-				className={`bg-black ${
-					process.env.NODE_ENV === "development" ? "debug-screens" : undefined
-				}`}
-			>
-				{children}
-			</body>
-		</html>
-	);
+    return (
+        <html
+            lang='pt-BR'
+            className={[inter.variable, calSans.variable].join(' ')}>
+            <body
+                className={`bg-black ${
+                    process.env.NODE_ENV === 'development'
+                        ? 'debug-screens'
+                        : undefined
+                }`}>
+                {children}
+            </body>
+        </html>
+    )
 }
