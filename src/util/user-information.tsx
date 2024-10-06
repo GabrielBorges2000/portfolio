@@ -447,7 +447,7 @@ export const experiences = [
         position: 'Professor de Desenvolvimento Web - Voluntário',
         period: 'Atual aos Domingos',
         describe:
-            'Atuando como professor voluntário de desenvolvimento web, ministrando aulas sobre tecnologias como  HTML, CSS, JavaScript. O foco é ensinar boas práticas de desenvolvimento e inovação para criação de soluções escaláveis para web e criação sites para freelancer gerante novas oportunidades a jovens.',
+            'Atuando como professor voluntário de desenvolvimento web, ministrando aulas sobre tecnologias como  HTML, CSS, JavaScript. O foco é ensinar boas práticas de desenvolvimento e inovação para criação de soluções escaláveis para web e criação sites para freelancer gerando novas oportunidades de trabalho aos jovens.',
         icon: <GiTeacher size={40} color={color.white} />,
         stack: [
             <SiNodedotjs />,
