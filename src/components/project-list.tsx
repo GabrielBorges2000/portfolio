@@ -1,4 +1,3 @@
-// components/ProjectsList.js
 'use client'
 
 import type { Repository } from '@/util/get-user'

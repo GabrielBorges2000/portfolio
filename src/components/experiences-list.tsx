@@ -1,4 +1,3 @@
-// components/ProjectsList.js
 'use client'
 
 import * as userInfo from '@/util/user-information'
@@ -23,7 +22,7 @@ export function ExperiencesList() {
                                     {experience.position}
                                 </CardTitle>
                                 <p className='text-sm text-muted-foreground'>
-                                    {experience.name}
+                                    {experience.name} - {experience.period}
                                 </p>
                             </div>
                         </CardHeader>

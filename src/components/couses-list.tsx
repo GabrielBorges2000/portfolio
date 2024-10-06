@@ -1,4 +1,3 @@
-// components/ProjectsList.js
 'use client'
 
 import * as userInfo from '@/util/user-information'
