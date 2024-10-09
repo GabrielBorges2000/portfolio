@@ -307,7 +307,7 @@ export const formation = [
     },
     {
         name: 'Faculdade Descomplica Digital',
-        degree: 'Analise e Desenvolviemnto de Sistemas',
+        degree: 'Análise e Desenvolvimento de Sistemas',
         period: 'Em andamento',
         describe:
             'Faculdade de analise e desenvolvimento de sistemas em modalidade EAD. com término em junho de 2026',
