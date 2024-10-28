@@ -405,7 +405,7 @@ export const courses = [
 export const experiences = [
     {
         name: 'Arcos',
-        position: 'Desenvolvedor FullStack PJ',
+        position: 'Desenvolvedor FullStack',
         period: 'Atual',
         describe:
             'Desenvolvimento do novo sistema da empresa que estava em PL/SQL para tecnologias modernas como Node.js, JQuery, Bootstrap, EJS, Express, HTML, CSS, JavaScript e SQL. Inovações com React Native e AI.',
@@ -424,7 +424,7 @@ export const experiences = [
     },
     {
         name: 'Code Borges',
-        position: 'CTO e Desenvolvedor FullStack PJ',
+        position: 'Desenvolvedor FullStack Freelancer',
         period: 'Atual',
         describe:
             'Responsável pela direção técnica e desenvolvimento de sistemas para diversos clientes, utilizando tecnologias modernas como Node.js, React, React Native, Bootstrap, Express, JavaScript, SQL, e AI. Especialização em soluções escaláveis e inovadoras para web, mobile e desktop.',
@@ -463,7 +463,7 @@ export const experiences = [
     },
     {
         name: 'Pirovani Magazine',
-        position: 'Desenvolvedor FullStack PJ',
+        position: 'Desenvolvedor FullStack Freelancer',
         period: 'Março/2023 – Agosto/2023',
         describe:
             'Desenvolvimento de site e CMS, sistemas internos, manutenção de computadores, atendimento ao cliente e design gráfico com Photoshop. Utilizando tecnologias como Next.js, React, Sanity, Node.js e API Rest.',
