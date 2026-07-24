@@ -1,25 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	images: {
-		remotePatterns: [
-			{
-				protocol: "https",
-				hostname: "source.unsplash.com",
-				port: "",
-				pathname: "**",
-			},
-			{
-				protocol: "https",
-				hostname: "avatars.githubusercontent.com",
-				port: "",
-				pathname: "**",
-			},
-		],
-	},
+  images: {
+    qualities: [25, 50, 75, 100],
+    remotePatterns: [
+      { hostname: "github.com" },
+      { hostname: "avatars.githubusercontent.com" },
+      { hostname: "source.unsplash.com" },
+    ],
+  },
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
+  },
 	transpilePackages: ["lucide-react"],
-	eslint: {
-		ignoreDuringBuilds: true,
-	},
 	typescript: {
 		ignoreBuildErrors: true,
 	},
