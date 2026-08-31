@@ -37,7 +37,7 @@ export function LanguageToggle() {
   }
 
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <Button
           variant='ghost'
