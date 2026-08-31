@@ -31,7 +31,8 @@
       "contentlayer/generated": [
         "./.contentlayer/generated"
       ]
-    }
+    },
+    "ignoreDeprecations": "5.0"
   },
   "include": [
     "next-env.d.ts",

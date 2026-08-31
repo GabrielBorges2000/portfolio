@@ -7,9 +7,9 @@ import { getUserGitHub } from '@/util/get-user'
 import { transformePhone } from '@/util/transforme-phone'
 
 export const metadata: Metadata = {
-  title: 'Início',
+  title: 'Início | Portfólio de Gabriel Borges',
   description:
-    'Portfólio de Gabriel Borges — Full-Stack, UX Designer e CTO da CODE BORGES.',
+    'Portfólio de Gabriel Borges — Backend Engineer | Node.js & TypeScript | NestJS | PostgreSQL | AWS | Kubernetes.',
 }
 
 export default async function Home() {
@@ -52,7 +52,9 @@ export default async function Home() {
 
       <div className='hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0' />
       <div className='my-16 text-center animate-fade-in'>
-        <h2 className='text-sm md:text-lg text-zinc-300 '>{user?.bio}</h2>
+        <h2 className='text-sm md:text-lg text-zinc-300 '>
+          Backend Engineer · Node.js &amp; TypeScript
+        </h2>
       </div>
       <div className='flex flex-row gap-8 text-center animate-fade-in'>
         {socials.map((s) => (

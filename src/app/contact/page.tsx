@@ -8,7 +8,7 @@ import { socials } from '@/lib/navigation'
 import { transformePhone } from '@/util/transforme-phone'
 
 export const metadata: Metadata = {
-  title: 'Contato',
+  title: 'Contato | Portfólio de Gabriel Borges',
   description:
     'Entre em contato com Gabriel Borges — Github, LinkedIn, e-mail e WhatsApp.',
 }

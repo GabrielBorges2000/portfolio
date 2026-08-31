@@ -11,7 +11,7 @@ export function ExperiencesList() {
         Experiência profissional
       </h2>
       <div className='hidden w-full h-px md:block bg-zinc-800' />
-      <div className='grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2'>
+      <div className='grid grid-cols-1 gap-8 mx-auto'>
         {userInfo.experiences.map((experience) => (
           <Card key={experience.name}>
             <CardHeader className='flex flex-row items-center space-x-4 pb-2'>
@@ -26,8 +26,8 @@ export function ExperiencesList() {
               </div>
             </CardHeader>
             <CardContent className='relative w-full h-full p-2 md:p-8'>
-              <p className='leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300'>
-                {experience.describe ?? ''}
+              <p className='leading-8 duration-150 text-zinc-400 group-hover:text-zinc-300 whitespace-pre-line'>
+                {experience.describe.join('\n')}
               </p>
             </CardContent>
           </Card>

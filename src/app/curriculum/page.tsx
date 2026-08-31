@@ -11,9 +11,9 @@ import { getUserGitHub } from '@/util/get-user'
 import * as userInfo from '@/util/user-information'
 
 export const metadata: Metadata = {
-  title: 'Currículo',
+  title: 'Currículo | Portfólio de Gabriel Borges',
   description:
-    'Hard skills, soft skills, formação acadêmica, cursos, experiências profissionais e idiomas de Gabriel Borges.',
+    'Backend Engineer — hard skills, soft skills, formação acadêmica, cursos, experiências profissionais e idiomas de Gabriel Borges.',
 }
 
 export default async function CurriculumPage() {
@@ -43,20 +43,26 @@ export default async function CurriculumPage() {
             {user?.name}
           </h2>
           <p className='mt-4 text-zinc-400'>
-            Desenvolvedor Full Stack Pleno com experiência no desenvolvimento
-            de aplicações web, mobile e backend, além de atuação em Cloud,
-            DevOps, Cibersegurança e integrações com sistemas corporativos.
+            Backend Engineer com atuação prática em Node.js, TypeScript e
+            NestJS, focado no desenvolvimento e evolução de APIs REST,
+            integrações entre sistemas e plataformas corporativas. Nos últimos
+            anos meu trabalho se concentrou em ambientes multi-tenant com
+            PostgreSQL, Prisma e RabbitMQ, e em desenvolvimento e manutenção de
+            conectores SailPoint para provisionamento de identidades.
           </p>
           <p className='mt-4 text-zinc-400'>
-            Experiência no desenvolvimento e evolução de soluções, APIs,
-            integrações e conectores SailPoint, trabalhando em conjunto com
-            equipes de desenvolvimento, DevOps e produto.
+            Tenho exposição consistente a AWS (EKS, EC2, ECR, S3, Aurora, SQS,
+            IAM), Docker, Kubernetes, pipelines de CI/CD no GitHub Actions e
+            deploy via GitOps com FluxCD. Atuei com release engineering
+            (semantic versioning, conventional commits) e em investigação de
+            incidentes em produção, com participação em RCA e postmortem. Minha
+            visão full stack com React e Next.js é uma competência
+            complementar, utilizada quando a entrega pede frente no frontend.
           </p>
           <p className='mt-4 text-zinc-400'>
-            Busco constantemente aprimorar meus conhecimentos, acompanhar novas
-            tecnologias e transformar desafios de negócio em soluções eficientes
-            e escaláveis. Também valorizo o compartilhamento de conhecimento e
-            a colaboração com outros profissionais.
+            Procuro aprofundar continuamente arquitetura distribuída,
+            observabilidade, segurança e tomada de decisão técnica para crescer
+            em responsabilidade técnica sobre sistemas backend.
           </p>
           <p className='mt-4 text-zinc-400'>
             Veja uma breve descrição das minhas habilidades, conhecimento,
@@ -99,9 +105,9 @@ export default async function CurriculumPage() {
         </section>
 
         <FormationList />
-        <CoursesList />
         <ExperiencesList />
         <LanguageList />
+        <CoursesList />
       </div>
     </div>
   )

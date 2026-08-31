@@ -6,7 +6,7 @@ import { ProjectsList } from '@/components/project-list'
 import { getUserGitHub } from '@/util/get-user'
 
 export const metadata: Metadata = {
-  title: 'Projetos',
+  title: 'Projetos | Portfólio de Gabriel Borges',
   description:
     'Projetos em destaque e demais repositórios de Gabriel Borges no GitHub.',
 }
