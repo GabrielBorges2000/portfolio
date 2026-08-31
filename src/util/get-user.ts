@@ -1,122 +1,206 @@
 import { env } from '../env'
 
 export interface Repository {
-    id: number
-    name: string
-    description: string
-    project_url: string
-    project_api_url: string
-    views: number
-    created_at: string
-    homepage: string
-    html_url?: string
-    url?: string
-    watchers_count?: number
+  id: number
+  name: string
+  description: string
+  project_url: string
+  project_api_url: string
+  views: number
+  created_at: string
+  homepage: string
+  html_url?: string
+  url?: string
+  watchers_count?: number
 }
+
 export interface User {
-    name: string
-    bio: string
-    avatar_url: string
-    repos_url: string
+  name: string
+  bio: string
+  avatar_url: string
+  repos_url: string
 }
 
 export interface GithubUser {
-    user: User | null
-    repositorios: {
-        initialRepositories: Repository[] | []
-        repositories: Repository[] | []
+  user: User
+  repositorios: {
+    initialRepositories: Repository[]
+    repositories: Repository[]
+  }
+}
+
+const EMPTY_USER: User = {
+  name: '',
+  bio: '',
+  avatar_url: '',
+  repos_url: '',
+}
+
+const FALLBACK: GithubUser = {
+  user: EMPTY_USER,
+  repositorios: {
+    initialRepositories: [],
+    repositories: [],
+  },
+}
+
+const PER_PAGE = 100
+// Limite duro para evitar loop infinito se a API retornar página vazia
+// repetidamente sem erro (situação inesperada). 50 páginas × 100 = 5 000 repos.
+const MAX_PAGES = 50
+
+async function safeJson<T>(response: Response): Promise<T | null> {
+  try {
+    return (await response.json()) as T
+  } catch {
+    return null
+  }
+}
+
+function formatRepo(repo: Repository) {
+  return {
+    id: repo.id,
+    name: repo.name,
+    description: repo.description,
+    project_url: repo.html_url ?? '',
+    project_api_url: repo.url ?? '',
+    views: repo.watchers_count ?? 0,
+    created_at: repo.created_at,
+    homepage: repo.homepage ?? '',
+  }
+}
+
+/**
+ * Busca páginas de repositórios em paralelo, em grupos de `batchSize`,
+ * parando quando uma página vem vazia ou quando atingimos `MAX_PAGES`.
+ * Retorna a lista concatenada e deduplicada de todos os repositórios.
+ */
+async function fetchAllRepos(
+  baseUrl: string,
+  requestConfig: RequestInit,
+  batchSize = 5
+): Promise<Repository[]> {
+  const seenIds = new Set<number>()
+  const allRepos: Repository[] = []
+
+  for (let startPage = 1; startPage <= MAX_PAGES; startPage += batchSize) {
+    const pageNumbers = Array.from(
+      { length: batchSize },
+      (_, i) => startPage + i
+    )
+
+    const responses = await Promise.all(
+      pageNumbers.map((page) =>
+        fetch(`${baseUrl}?per_page=${PER_PAGE}&page=${page}`, requestConfig)
+      )
+    )
+
+    let stoppedEarly = false
+    let receivedAny = false
+
+    for (let i = 0; i < responses.length; i++) {
+      const page = pageNumbers[i]
+      const response = responses[i]
+
+      // 404/422 no GitHub = não há mais páginas.
+      if (!response.ok) {
+        if (response.status === 404 || response.status === 422) {
+          stoppedEarly = true
+          break
+        }
+        console.error(
+          `[getUserGitHub] falha na página ${page}: ${response.status}`
+        )
+        continue
+      }
+
+      const repos = await safeJson<Repository[]>(response)
+      if (!repos || repos.length === 0) {
+        stoppedEarly = true
+        break
+      }
+
+      receivedAny = true
+
+      for (const repo of repos) {
+        if (seenIds.has(repo.id)) continue
+        seenIds.add(repo.id)
+        allRepos.push(repo)
+      }
+
+      // Página parcial = chegamos no fim dos repositórios.
+      if (repos.length < PER_PAGE) {
+        stoppedEarly = true
+        break
+      }
     }
+
+    if (stoppedEarly) break
+    if (!receivedAny) break
+  }
+
+  return allRepos
 }
 
 export const getUserGitHub = async (): Promise<GithubUser> => {
-    const githubURL = `https://api.github.com/users/${env.NEXT_PUBLIC_GITHUB_USERNAME}`
+  const requestConfig: RequestInit = {
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${env.NEXT_PUBLIC_GITHUB_API_TOKEN}`,
+    },
+    next: {
+      tags: ['github'],
+      revalidate: 3600, // 1h — perfil/repos mudam pouco
+    },
+  }
 
-    const requestConfig: RequestInit = {
-        headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${env.NEXT_PUBLIC_GITHUB_API_TOKEN}`,
-        },
-        next: {
-            tags: ['github'],
-        },
-        cache: 'no-store',
-    }
+  try {
+    const githubURL = `https://api.github.com/users/${env.NEXT_PUBLIC_GITHUB_USERNAME}`
 
     const userDataResponse = await fetch(githubURL, requestConfig)
 
     if (!userDataResponse.ok) {
-        throw new Error('Failed to fetch user data')
+      return FALLBACK
     }
 
-    const userData = await userDataResponse.json()
-    const repos_url = userData.repos_url
+    const userData = await safeJson<{
+      name: string | null
+      bio: string | null
+      avatar_url: string
+      repos_url: string
+    }>(userDataResponse)
 
-    const [
-        repositoriosPage1Response,
-        repositoriosPage2Response,
-        repositoriosPage3Response,
-    ] = await Promise.all([
-        fetch(repos_url, requestConfig),
-        fetch(`${repos_url}?page=2`, requestConfig),
-        fetch(`${repos_url}?page=3`, requestConfig),
-    ])
+    if (!userData) return FALLBACK
 
-    if (
-        !repositoriosPage1Response.ok ||
-        !repositoriosPage2Response.ok ||
-        !repositoriosPage3Response.ok
-    ) {
-        throw new Error('Failed to fetch repositories data')
+    const user: User = {
+      name: userData.name ?? '',
+      bio: userData.bio ?? '',
+      avatar_url: userData.avatar_url,
+      repos_url: userData.repos_url,
     }
 
-    const [repositoriosPage1, repositoriosPage2, repositoriosPage3] =
-        await Promise.all([
-            repositoriosPage1Response.json(),
-            repositoriosPage2Response.json(),
-            repositoriosPage3Response.json(),
-        ])
+    const rawRepos = await fetchAllRepos(userData.repos_url, requestConfig)
+    const repositorios = rawRepos.map(formatRepo)
 
-    const formatRepo = (repo: Repository) => ({
-        id: repo.id,
-        name: repo.name,
-        description: repo.description,
-        project_url: repo.html_url,
-        project_api_url: repo.url,
-        views: repo.watchers_count,
-        created_at: repo.created_at,
-        homepage: repo.homepage,
-    })
-
-    const repositorios1 = await Promise.all(repositoriosPage1.map(formatRepo))
-    const repositorios2 = await Promise.all(repositoriosPage2.map(formatRepo))
-    const repositorios3 = await Promise.all(repositoriosPage3.map(formatRepo))
-
-    const repositorios = [...repositorios1, ...repositorios2, ...repositorios3]
-
-    const user = {
-        name: userData.name,
-        bio: userData.bio,
-        avatar_url: userData.avatar_url,
-        repos_url,
-    }
-
-    const initialRepositories = env.NEXT_PUBLIC_REPOSITORIES_EMPHASIS_ARRAY
-    const repositories = env.NEXT_PUBLIC_REPOSITORIES_ARRAY
-
-    const projectsInitials = repositorios.filter((repo) =>
-        initialRepositories.some((padrao: Repository) =>
-            repo.name.includes(padrao)
-        )
+    const initialRepositories = repositorios.filter((repo) =>
+      env.NEXT_PUBLIC_REPOSITORIES_EMPHASIS_ARRAY.some((padrao) =>
+        repo.name.includes(padrao)
+      )
     )
-    const projects = repositorios.filter((repo) =>
-        repositories.some((padrao: Repository) => repo.name.includes(padrao))
+    const repositories = repositorios.filter((repo) =>
+      env.NEXT_PUBLIC_REPOSITORIES_ARRAY.some((padrao) =>
+        repo.name.includes(padrao)
+      )
     )
 
     return {
-        user,
-        repositorios: {
-            initialRepositories: projectsInitials,
-            repositories: projects,
-        },
+      user,
+      repositorios: {
+        initialRepositories,
+        repositories,
+      },
     }
+  } catch {
+    return FALLBACK
+  }
 }
