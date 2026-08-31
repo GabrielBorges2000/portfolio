@@ -1,21 +1,26 @@
 'use client'
 
-import * as userInfo from '@/util/user-information'
+import { useTranslations } from 'next-intl'
+import type { Experience } from '@/utils/user-information'
+import { experienceMeta } from '@/utils/user-information'
 import { Card } from './card'
 import { CardContent, CardHeader, CardTitle } from './ui/card'
 
 export function ExperiencesList() {
+  const t = useTranslations('curriculum')
+  const experiences = t.raw('experiences') as Experience[]
+
   return (
     <section className='space-y-4'>
       <h2 className='z-10 text-lg text-transparent cursor-default text-edge-outline font-display sm:text-2xl md:text-3xl whitespace-nowrap bg-clip-text bg-gradient-radial-yellow tracking-wider'>
-        Experiência profissional
+        {t('sections.experiences')}
       </h2>
       <div className='hidden w-full h-px md:block bg-zinc-800' />
       <div className='grid grid-cols-1 gap-8 mx-auto'>
-        {userInfo.experiences.map((experience) => (
-          <Card key={experience.name}>
+        {experiences.map((experience) => (
+          <Card key={experience.id}>
             <CardHeader className='flex flex-row items-center space-x-4 pb-2'>
-              {experience.icon}
+              {experienceMeta[experience.id]?.icon}
               <div>
                 <CardTitle className='text-2xl text-zinc-100 font-bold'>
                   {experience.position}

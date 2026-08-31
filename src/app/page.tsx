@@ -1,22 +1,30 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { getTranslations } from 'next-intl/server'
+import { LanguageToggle } from '@/components/language-toggle'
 import Particles from '@/components/particles'
 import { navigation, socials } from '@/lib/navigation'
-import { getUserGitHub } from '@/util/get-user'
-import { transformePhone } from '@/util/transforme-phone'
+import { getUserGitHub } from '@/utils/get-user'
+import { transformePhone } from '@/utils/transforme-phone'
 
-export const metadata: Metadata = {
-  title: 'Início | Portfólio de Gabriel Borges',
-  description:
-    'Portfólio de Gabriel Borges — Backend Engineer | Node.js & TypeScript | NestJS | PostgreSQL | AWS | Kubernetes.',
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('metadata')
+  return {
+    title: t('home.title'),
+    description: t('home.description'),
+  }
 }
 
 export default async function Home() {
+  const t = await getTranslations()
   const { user } = await getUserGitHub()
 
   return (
     <div className='flex flex-col items-center justify-center w-screen h-screen max-h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black'>
+      <div className='absolute top-6 right-6 z-20 animate-fade-in'>
+        <LanguageToggle />
+      </div>
       <Image
         alt='Mountains'
         src={'/hero-background.svg'}
@@ -36,7 +44,7 @@ export default async function Home() {
               key={item.href}
               href={item.href}
               className='text-bold duration-500 text-zinc-400 hover:text-zinc-300'>
-              {item.name}
+              {t(`navigation.${item.key}`)}
             </Link>
           ))}
         </div>
@@ -53,7 +61,7 @@ export default async function Home() {
       <div className='hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0' />
       <div className='my-16 text-center animate-fade-in'>
         <h2 className='text-sm md:text-lg text-zinc-300 '>
-          Backend Engineer · Node.js &amp; TypeScript
+          {t('home.headline')}
         </h2>
       </div>
       <div className='flex flex-row gap-8 text-center animate-fade-in'>
@@ -68,8 +76,8 @@ export default async function Home() {
             <span className='hover:shadow-sm hover:shadow-zinc-100 relative z-10 flex items-center justify-center w-12 h-12 text-sm duration-300 border rounded-full text-zinc-200 border-zinc-500 bg-zinc-900 drop-shadow-orange'>
               {s.icon}
             </span>
-            {s.label}
-            <span className='sr-only'>(abre em nova aba)</span>
+            {t(`socials.${s.key}`)}
+            <span className='sr-only'>{t('opensNewTab')}</span>
           </Link>
         ))}
       </div>

@@ -1,19 +1,24 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { getTranslations } from 'next-intl/server'
 import { Card } from '@/components/card'
 import { Navigation } from '@/components/nav'
 import Particles from '@/components/particles'
 import { socials } from '@/lib/navigation'
-import { transformePhone } from '@/util/transforme-phone'
+import { transformePhone } from '@/utils/transforme-phone'
 
-export const metadata: Metadata = {
-  title: 'Contato | Portfólio de Gabriel Borges',
-  description:
-    'Entre em contato com Gabriel Borges — Github, LinkedIn, e-mail e WhatsApp.',
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('metadata')
+  return {
+    title: t('contact.title'),
+    description: t('contact.description'),
+  }
 }
 
-export default function Contact() {
+export default async function Contact() {
+  const t = await getTranslations()
+
   return (
     <div className=' bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0'>
       <Navigation />
@@ -34,16 +39,16 @@ export default function Contact() {
       <div className='w-full container flex items-center flex-col justify-center min-h-screen px-4 mx-auto pb-8 space-y-8'>
         <div className='mt-24 mb-8 md:mt-0 flex flex-col items-center justify-center '>
           <h1 className='z-10 text-2xl text-transparent cursor-default text-edge-outline font-display sm:text-4xl md:text-8xl whitespace-nowrap bg-clip-text bg-gradient-radial-yellow'>
-            Contatos
+            {t('contact.title')}
           </h1>
           <h2 className='text-sm md:text-lg text-zinc-300 text-center w-3/4 md:w-full'>
-            Escolha uma das opções abaixo para entrar em contato.
+            {t('contact.subtitle')}
           </h2>
         </div>
 
         <div className='grid w-full grid-cols-1 gap-8 mx-auto sm:grid-cols-2 lg:grid-cols-4 lg:gap-16'>
           {socials.map((s) => (
-            <Card key={s.label.replaceAll(' ', '')}>
+            <Card key={s.key}>
               <Link
                 href={s.href}
                 target='_blank'
@@ -61,10 +66,10 @@ export default function Contact() {
                     {transformePhone(s.handle)}
                   </span>
                   <span className='mt-4 text-sm text-center duration-1000 text-zinc-400 group-hover:text-zinc-200'>
-                    {s.label}
+                    {t(`socials.${s.key}`)}
                   </span>
                 </div>
-                <span className='sr-only'>(abre em nova aba)</span>
+                <span className='sr-only'>{t('opensNewTab')}</span>
               </Link>
             </Card>
           ))}

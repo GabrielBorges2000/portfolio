@@ -1,0 +1,354 @@
+{
+    "layout": {
+        "language": {
+            "english": "English",
+            "portuguese": "Português",
+            "toggle": "Alternar idioma"
+        }
+    },
+    "metadata": {
+        "siteTitle": "Portfólio de Gabriel Borges",
+        "home": {
+            "title": "Home | Portfólio de Gabriel Borges",
+            "description": "Gabriel Borges — Backend Engineer | Node.js & TypeScript | NestJS | PostgreSQL | AWS | Kubernetes."
+        },
+        "projects": {
+            "title": "Projetos | Portfólio de Gabriel Borges",
+            "description": "Projetos em destaque e outros repositórios do GitHub de Gabriel Borges."
+        },
+        "contact": {
+            "title": "Contato | Portfólio de Gabriel Borges",
+            "description": "Entre em contato com Gabriel Borges — GitHub, LinkedIn, e-mail e WhatsApp."
+        },
+        "curriculum": {
+            "title": "Currículo | Portfólio de Gabriel Borges",
+            "description": "Backend Engineer — hard skills, soft skills, formação acadêmica, cursos, experiências profissionais e idiomas de Gabriel Borges."
+        }
+    },
+    "navigation": {
+        "projects": "Projetos",
+        "contact": "Contato",
+        "curriculum": "Currículo"
+    },
+    "socials": {
+        "github": "Github",
+        "linkedin": "Linkedin",
+        "email": "Email",
+        "whatsapp": "Contato"
+    },
+    "opensNewTab": "(abre em nova aba)",
+    "home": {
+        "headline": "Backend Engineer · Node.js & TypeScript"
+    },
+    "projects": {
+        "title": "Projetos",
+        "subtitle": "Uma seleção dos meus melhores trabalhos. Cada um deles mostra minhas habilidades de desenvolvimento de software em diferentes níveis e ferramentas.",
+        "featured": "Destaques",
+        "others": "Outros projetos",
+        "viewSite": "Ver site",
+        "viewOnGithub": "ver no GitHub"
+    },
+    "contact": {
+        "title": "Contatos",
+        "subtitle": "Escolha uma das opções abaixo para entrar em contato."
+    },
+    "error": {
+        "title": "Algo deu errado",
+        "message": "Tivemos um problema ao renderizar esta página. Você pode tentar novamente ou voltar para a página inicial.",
+        "retry": "Tentar novamente",
+        "backHome": "Voltar ao início",
+        "errorCode": "Código do erro:"
+    },
+    "notFound": {
+        "message": "A página que você procura não existe ou foi movida.",
+        "backHome": "Voltar ao início"
+    },
+    "loading": {
+        "label": "Carregando",
+        "srLabel": "Carregando conteúdo…"
+    },
+    "curriculum": {
+        "sections": {
+            "hardSkills": "Hard Skills",
+            "softSkills": "Soft Skills",
+            "formation": "Formação Acadêmica",
+            "experiences": "Experiência profissional",
+            "languages": "Idiomas",
+            "courses": "Cursos e Certificações"
+        },
+        "about": [
+            "Backend Engineer com atuação prática em Node.js, TypeScript e NestJS, focado no desenvolvimento e evolução de APIs REST, integrações entre sistemas e plataformas corporativas. Nos últimos anos meu trabalho se concentrou em ambientes multi-tenant com PostgreSQL, Prisma e RabbitMQ, e em desenvolvimento e manutenção de conectores SailPoint para provisionamento de identidades.",
+            "Tenho exposição consistente a AWS (EKS, EC2, ECR, S3, Aurora, SQS, IAM), Docker, Kubernetes, pipelines de CI/CD no GitHub Actions e deploy via GitOps com FluxCD. Atuei com release engineering (semantic versioning, conventional commits) e em investigação de incidentes em produção, com participação em RCA e postmortem. Minha visão full stack com React e Next.js é uma competência complementar, utilizada quando a entrega pede frente no frontend.",
+            "Procuro aprofundar continuamente arquitetura distribuída, observabilidade, segurança e tomada de decisão técnica para crescer em responsabilidade técnica sobre sistemas backend.",
+            "Veja uma breve descrição das minhas habilidades, conhecimento, formações e experiências que tive ao longo dos anos."
+        ],
+        "hardSkills": {
+            "nodejs": "Node.js",
+            "typescript": "TypeScript",
+            "nestjs": "NestJS",
+            "apiRest": "API REST",
+            "postgresql": "PostgreSQL",
+            "prisma": "Prisma",
+            "rabbitmq": "RabbitMQ",
+            "java": "Java",
+            "springBoot": "Spring Boot",
+            "mysql": "MySQL",
+            "oracleDb": "OracleDB",
+            "microservices": "Micro Serviços",
+            "multiTenant": "Multi Tenant",
+            "aws": "AWS",
+            "docker": "Docker",
+            "kubernetes": "Kubernetes",
+            "cicd": "CI/CD",
+            "gitops": "GitOps",
+            "devops": "DevOps",
+            "terraform": "Terraform",
+            "cloudflare": "Cloudflare",
+            "gcp": "GCP",
+            "azure": "Azure",
+            "linux": "Linux",
+            "jenkins": "Jenkins",
+            "javascript": "JavaScript",
+            "react": "React",
+            "reactNative": "React Native",
+            "nextjs": "Next.js",
+            "vite": "Vite",
+            "express": "Express.js",
+            "fastify": "Fastify",
+            "git": "Git",
+            "github": "GitHub",
+            "automatedTesting": "Testes Automatizados",
+            "zod": "Zod",
+            "jwt": "JWT",
+            "sailpoint": "SailPoint Connector",
+            "cybersecurity": "Cybersecurity",
+            "artificialIntelligence": "Inteligência Artificial",
+            "tailwindcss": "TailwindCSS",
+            "shadcn": "Shadcn/ui",
+            "reactQuery": "React Query",
+            "kanban": "Kanban",
+            "scrum": "Scrum",
+            "designSprint": "Design Sprint",
+            "designThinking": "Design Thinking"
+        },
+        "softSkills": {
+            "communication": "Comunicação Eficaz",
+            "problemSolving": "Resolução de Problemas",
+            "teamwork": "Trabalho em Equipe",
+            "collaboration": "Colaboração entre Equipes Multidisciplinares",
+            "knowledgeSharing": "Compartilhamento de Conhecimento",
+            "timeManagement": "Gestão de Tempo",
+            "adaptability": "Adaptabilidade",
+            "criticalThinking": "Pensamento Crítico",
+            "proactivity": "Autogestão e Proatividade",
+            "empathy": "Empatia",
+            "resilience": "Resiliência"
+        },
+        "formation": [
+            {
+                "id": "cc50",
+                "name": "Fundação Estudar - Harvard EAD",
+                "degree": "Ciência da Computação CC50",
+                "period": "Concluido em 2023",
+                "describe": "Curso introdutório em ciência da computação oferecido pela faculdade de Harvard através da Fundação Estudar."
+            },
+            {
+                "id": "ads",
+                "name": "Faculdade Descomplica Digital",
+                "degree": "Análise e Desenvolvimento de Sistemas",
+                "period": "Em andamento",
+                "describe": "Faculdade de analise e desenvolvimento de sistemas em modalidade EAD. com término em junho de 2026"
+            },
+            {
+                "id": "fiap-eng",
+                "name": "FIAP - CENTRO UNIVERSITÁRIO",
+                "degree": "Engenharia de Software (Nano Course)",
+                "period": "Concluído",
+                "describe": "Nano course focado em Engenharia de Software, abordando conceitos de arquitetura, padrões de projeto e boas práticas de desenvolvimento."
+            }
+        ],
+        "courses": [
+            {
+                "id": "logica",
+                "name": "Lógica de Programação com JavaScript",
+                "institution": "DNC, Rocketseat e DIO",
+                "describe": "Curso focado nos conceitos fundamentais de lógica de programação utilizando JavaScript."
+            },
+            {
+                "id": "html-css-js",
+                "name": "HTML5, CSS3, JavaScript",
+                "institution": "DNC e Rocketseat",
+                "describe": "Curso sobre desenvolvimento web com as principais tecnologias e bibliotecas front-end."
+            },
+            {
+                "id": "typescript",
+                "name": "TypeScript",
+                "institution": "Rocketseat",
+                "describe": "Especialização em TypeScript para garantir um desenvolvimento mais seguro e escalável, aproveitando os benefícios da tipagem estática."
+            },
+            {
+                "id": "react-next",
+                "name": "React, React Native, Next.js, Electron.",
+                "institution": "DIO, Rocketseat e Codecademy",
+                "describe": "Especialização completa sobre desenvolvimento de aplicações web e mobile com React, Next.js e Electron e as melhores bibliotecas e front-end."
+            },
+            {
+                "id": "node-java-python",
+                "name": "Node.js, Java, Python, API Restfull",
+                "institution": "Rocketseat",
+                "describe": "Cursos completos sobre desenvolvimento de aplicações back-end com Node.js, Java, Python"
+            },
+            {
+                "id": "databases",
+                "name": "PostgreSQL, MySQL, OracleDB, SQLite, Firebase",
+                "institution": "Rocketseat",
+                "describe": "Curso completo sobre bancos de dados relacionais e não-relacionais, com foco em PostgreSQL, MySQL, OracleDB, SQLite e Firebase para desenvolvimento de aplicações back-end e realizar ações e consultas no banco."
+            },
+            {
+                "id": "testing",
+                "name": "Testes Unitários, Testes E2E, Testes de Integração",
+                "institution": "Rocketseat",
+                "describe": "Curso completo sobre a criação e execução de testes unitários, testes de integração e testes de ponta a ponta (E2E) para garantir a qualidade do código e a confiabilidade de aplicações."
+            },
+            {
+                "id": "devops-docker",
+                "name": "DevOps com Docker, Github Actions, CI/CD",
+                "institution": "Rocketseat",
+                "describe": "Curso completo sobre conceitos de DevOps utilizando Docker para automação, escalabilidade e gerenciamento de containers em ambientes de desenvolvimento e produção. Além de criar workflows com Github Actions"
+            },
+            {
+                "id": "ux-foundations",
+                "name": "Fundamentos de UX Designer",
+                "institution": "DNC e FIAP",
+                "describe": "Curso sobre design centrado no usuário e usabilidade de interfaces digitais."
+            },
+            {
+                "id": "photoshop",
+                "name": "Adobe Photoshop",
+                "institution": "Arquitettar",
+                "describe": "Curso de manipulação e edição de imagens utilizando Adobe Photoshop."
+            },
+            {
+                "id": "ai-openai",
+                "name": "Inteligência Artificial - OpenAI",
+                "institution": "Rocketseat",
+                "describe": "Curso focado nos conceitos e aplicações de inteligência artificial em desenvolvimento, utilizando a API da OpenAI."
+            },
+            {
+                "id": "lider-coach",
+                "name": "Líder Coach",
+                "institution": "Sebrae",
+                "describe": "Curso de liderança e desenvolvimento de habilidades de coaching focado em desenvolvimento e treinamento de pessoas."
+            },
+            {
+                "id": "fullstack",
+                "name": "Desenvolvimento Fullstack",
+                "institution": "Rocketseat, DNC, DIO, Faculdade Descomplica Digital, FIAP",
+                "describe": "Formação completa em desenvolvimento fullstack, cobrindo front-end, back-end, bancos de dados, DevOps e boas práticas de engenharia de software."
+            },
+            {
+                "id": "ux-designer",
+                "name": "UX Designer",
+                "institution": "DNC, FIAP, Faculdade Descomplica Digital",
+                "describe": "Formação em UX Design cobrindo pesquisa, prototipagem, testes de usabilidade, design centrado no usuário e ferramentas como Figma."
+            },
+            {
+                "id": "cybersecurity",
+                "name": "Cybersecurity (Nano Course)",
+                "institution": "FIAP - CENTRO UNIVERSITÁRIO",
+                "describe": "Nano course focado em conceitos de cibersegurança, identificação de vulnerabilidades, boas práticas de segurança em aplicações e infraestrutura."
+            },
+            {
+                "id": "devops-linux-testing",
+                "name": "DevOps, Linux e Testes Automatizados",
+                "institution": "Rocketseat, 4Linux, FIAP",
+                "describe": "Trilha completa sobre práticas de DevOps, administração de ambientes Linux e implementação de testes automatizados para garantir qualidade e confiabilidade em pipelines de entrega contínua."
+            },
+            {
+                "id": "ai-llms",
+                "name": "Inteligência Artificial, Chatbots e LLMs",
+                "institution": "Rocketseat, FIAP - CENTRO UNIVERSITÁRIO",
+                "describe": "Cursos sobre inteligência artificial, construção de chatbots e uso de Large Language Models (LLMs) aplicados a produtos e soluções reais."
+            }
+        ],
+        "languages": [
+            {
+                "id": "portuguese",
+                "name": "Português",
+                "level": "Nativo"
+            },
+            {
+                "id": "english",
+                "name": "Inglês",
+                "level": "Básico / Técnico"
+            }
+        ],
+        "experiences": [
+            {
+                "id": "contractlabs",
+                "name": "CONTRACTLABS SISTEMAS LTDA / RAISE IT",
+                "position": "Backend Engineer",
+                "period": "01/2025 - 08/2026",
+                "describe": [
+                    "Atuei no desenvolvimento do ecossistema SaaS multi-tenant para gestão de terceiros e identidade, com dois sistemas em Node.js/TypeScript/NestJS - ContractFlow (gestão de prestadores, fornecedores, alocações e contratos) e IAM (identidade, permissões, provedores de autenticação, API keys e auditoria). Cada cliente opera uma base dedicada por ambiente (dev/hml/prod).",
+                    "- Desenvolvi e evoluí APIs REST em Node.js/TypeScript/NestJS para os sistemas ContractFlow e IAM, com validação via Zod.",
+                    "- Estruturei a arquitetura multi-tenant e ajudei nas decisões de isolamento de schema, provisionamento de tenants e ciclo de vida das bases.",
+                    "- Fui responsável por três conectores SailPoint SaaS em produção (conector principal do ContractLabs e dois conectores para parceiros).",
+                    "- Modelei e mantive o banco com PostgreSQL + Prisma, incluindo uma lib interna de auditoria que registava ações originadas por HTTP ou por filas RabbitMQ.",
+                    "- Implementei o módulo de notificações, o frontend do IAM em Next.js e o mapeamento de grupos SAML para permissões (SSO corporativo por tenant).",
+                    "- Mantive o pipeline de release com GitHub Actions (semantic versioning, conventional commits) e o deploy via GitOps/FluxCD com imagens no ECR da AWS aplicadas ao cluster.",
+                    "- Investiguei e resolvi incidentes em produção, com participação em RCA e postmortem; escrevi testes automatizados (unitários e de integração) com Vitest/Jest.",
+                    "- Ajudei nas decisões de arquitetura, revisei PRs, defini padrões do time e orientei tecnicamente colegas."
+                ]
+            },
+            {
+                "id": "codeborges",
+                "name": "CODEBORGES",
+                "position": "Backend Engineer (Freelancer)",
+                "period": "05/2022 - Atual",
+                "describe": [
+                    "Atuo como desenvolvedor autônomo desde 2022, com foco em backend Node.js/TypeScript e em produtos próprios de modelo SaaS. Entre os projetos, destaca-se o Nexus, plataforma em desenvolvimento para gestão de eventos, freelancers e participantes, com multi-tenancy, check-in geolocalizado e relatórios financeiros.",
+                    "- Desenvolvo APIs e aplicações backend em Node.js, TypeScript e NestJS, com modelagem de bancos relacionais e integração com serviços externos.",
+                    "- Estruturei e mantenho o Nexus, um SaaS em desenvolvimento para gestão de eventos, freelancers e participantes. O produto inclui multi-tenancy por empresa, gestão de locais, escala e repasse de freelancers com check-in/checkout geolocalizado (com foto), gestão de eventos, ingressos, palestrantes, participantes, emissão de certificados, relatório financeiro, envio de e-mails por template e auditoria de ações.",
+                    "- Implementação de ambientes com Docker e CI/CD para os projetos em produção, com deploy em servidor autohospedado.",
+                    "- Realizo também desenvolvimentos pontuais de sites institucionais e e-commerces, sob demanda."
+                ]
+            },
+            {
+                "id": "arcos",
+                "name": "ARCOS - Associação Rede de Compras para Supermercados",
+                "position": "Desenvolvedor Full Stack",
+                "period": "07/2023 - 01/2025",
+                "describe": [
+                    "A ARCOS é uma associação de compras para supermercados que mantinha um sistema legado em PL/SQL para gestão de vendas e pesquisa de preços. Atuei na migração para Node.js (EJS) e na construção de um sistema WMS para gestão de estoque (web + mobile).",
+                    "- Migrei o legado PL/SQL para Node.js, sendo responsável pela evolução do backend e pelas interfaces do sistema de vendas.",
+                    "- Construí, do início ao fim, um PWA offline para pesquisa de preços em supermercados, usado por funcionários em campo. O app designava o local da pesquisa, capturava foto do produto via câmera e anotava valor; precisava funcionar sem internet. IndexedDB (implementada por mim, decisão técnica avaliada dentro do time) garantiu armazenamento local com ampla compatibilidade. Publiquei uma lib utilitária no NPM para encapsular o acesso ao IndexedDB - sem dependências, segura e de fácil manutenção.",
+                    "- Evolvi os módulos de análise de pesquisa, precificação por categoria e o início do sistema WMS.",
+                    "- No WMS web: criei a base inicial de migração de dados, integrei com ERPs e implementei a tela de mapeamento visual do estoque (distribuidora → galpão → ruas → prédios → andares → células) com categorização por cor.",
+                    "- No WMS mobile (React Native): contatei o fabricante dos coletores, implementei login, recebimento de mercadorias com código de barras, depara cego, recontagem, impressão de etiquetas, armazenamento com base no mapeamento, movimentação/troca de lugar, auditoria de toda movimentação e ajuste de estoque com verificação física em caso de divergência."
+                ]
+            },
+            {
+                "id": "xpoint",
+                "name": "X-Point Soluções Tecnológicas",
+                "position": "Desenvolvedor Front-End",
+                "period": "05/2022 - 01/2023",
+                "describe": [
+                    "A X-Point era uma softwarehouse regional com produtos consolidados - entre eles o DataDivas, PDV voltado para gestão de restaurantes já estabelecido na região - e novos projetos sob demanda para clientes externos, incluindo integração com a maquininha de cartão Stone.",
+                    "- Análise técnica de como integrar uma aplicação React Native à maquininha de cartão Stone (para o sistema de garçons). A análise foi minha; a implementação das features que usavam recursos da maquininha foi realizada pelo restante da equipe.",
+                    "- Desenvolvi o frontend de um sistema de pedidos de gás, consumindo o backend e permitindo ao usuário localizar a loja mais próxima e fazer o pedido pelo aplicativo.",
+                    "- Atuei no suporte do PDV DataDivas para clientes, exclusivamente via AnyDesk e TeamViewer."
+                ]
+            },
+            {
+                "id": "cofam",
+                "name": "ONG COFAM",
+                "position": "Professor de Desenvolvimento Web",
+                "period": "08/2024 - 01/2025",
+                "describe": [
+                    "Atuei como professor voluntário de desenvolvimento web aos domingos, conduzindo aulas práticas para os alunos."
+                ]
+            }
+        ]
+    }
+}

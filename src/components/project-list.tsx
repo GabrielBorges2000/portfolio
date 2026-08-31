@@ -2,7 +2,8 @@
 
 import { ExternalLink, Eye } from 'lucide-react'
 import Link from 'next/link'
-import type { Repository } from '@/util/get-user'
+import { useLocale, useTranslations } from 'next-intl'
+import type { Repository } from '@/utils/get-user'
 import { Card } from './card'
 
 function isValidHomepage(homepage: string): boolean {
@@ -16,6 +17,11 @@ function isValidHomepage(homepage: string): boolean {
 }
 
 export function ProjectsList({ projects }: { projects: Array<Repository> }) {
+  const t = useTranslations('projects')
+  const tShared = useTranslations()
+  const locale = useLocale()
+  const intlLocale = locale === 'pt-br' ? 'pt-BR' : 'en-US'
+
   return (
     <div className='grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2'>
       {projects.map((project) => {
@@ -26,14 +32,14 @@ export function ProjectsList({ projects }: { projects: Array<Repository> }) {
               <div className='flex items-center justify-between gap-2'>
                 <div className='text-xs text-zinc-100'>
                   <time dateTime={new Date(project.created_at).toISOString()}>
-                    {Intl.DateTimeFormat('pt-BR', {
+                    {Intl.DateTimeFormat(intlLocale, {
                       dateStyle: 'medium',
                     }).format(new Date(project.created_at))}
                   </time>
                 </div>
                 <span className='flex items-center gap-1 text-xs text-zinc-500'>
                   <Eye className='w-4 h-4' />{' '}
-                  {Intl.NumberFormat('pt-BR', {
+                  {Intl.NumberFormat(intlLocale, {
                     notation: 'compact',
                   }).format(project.views ?? 0)}
                 </span>
@@ -54,9 +60,9 @@ export function ProjectsList({ projects }: { projects: Array<Repository> }) {
                     rel='noopener noreferrer'
                     className='inline-flex items-center gap-2 px-3 py-2 rounded-md border border-zinc-500 text-sm text-zinc-200 hover:bg-zinc-800 transition-colors'>
                     <ExternalLink className='w-4 h-4' aria-hidden='true' />
-                    Ver site
+                    {t('viewSite')}
                     <span className='sr-only'>
-                      de {project.name} (abre em nova aba)
+                      de {project.name} {tShared('opensNewTab')}
                     </span>
                   </Link>
                 ) : null}
@@ -65,9 +71,9 @@ export function ProjectsList({ projects }: { projects: Array<Repository> }) {
                   target='_blank'
                   rel='noopener noreferrer'
                   className='inline-flex items-center gap-2 px-3 py-2 rounded-md text-sm text-zinc-300 hover:text-zinc-100 transition-colors'>
-                  ver no GitHub <span aria-hidden='true'>&rarr;</span>
+                  {t('viewOnGithub')} <span aria-hidden='true'>&rarr;</span>
                   <span className='sr-only'>
-                    de {project.name} (abre em nova aba)
+                    de {project.name} {tShared('opensNewTab')}
                   </span>
                 </Link>
               </div>

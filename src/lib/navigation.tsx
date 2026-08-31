@@ -1,46 +1,49 @@
 import { Github, Linkedin, Mail, Phone } from 'lucide-react'
 
+export type NavKey = 'projects' | 'contact' | 'curriculum'
+export type SocialKey = 'github' | 'linkedin' | 'email' | 'whatsapp'
+
 export interface NavItem {
-  name: string
+  key: NavKey
   href: string
 }
 
 export interface Social {
   icon: React.ReactNode
   href: string
-  label: string
+  key: SocialKey
   handle: string
 }
 
 export const navigation: NavItem[] = [
-  { name: 'Projetos', href: '/projects' },
-  { name: 'Contato', href: '/contact' },
-  { name: 'Currículo', href: '/curriculum' },
+  { key: 'projects', href: '/projects' },
+  { key: 'contact', href: '/contact' },
+  { key: 'curriculum', href: '/curriculum' },
 ]
 
 export const socials: Social[] = [
   {
     icon: <Github size={20} />,
     href: 'https://github.com/GabrielBorges2000',
-    label: 'Github',
+    key: 'github',
     handle: 'GabrielBorges2000',
   },
   {
     icon: <Linkedin size={20} />,
     href: 'https://www.linkedin.com/in/GabrielBorges2000',
-    label: 'Linkedin',
+    key: 'linkedin',
     handle: '@GabrielBorges2000',
   },
   {
     icon: <Mail size={20} />,
     href: 'mailto:gabriel.vscode@gmail.com',
-    label: 'Email',
+    key: 'email',
     handle: 'gabriel.vscode@gmail.com',
   },
   {
     icon: <Phone size={20} />,
     href: 'http://api.whatsapp.com/send?phone=5511986237504',
-    label: 'Contato',
+    key: 'whatsapp',
     handle: '+5511986237504',
   },
 ]

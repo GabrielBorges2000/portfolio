@@ -1,13 +1,16 @@
 'use client'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 import type React from 'react'
 import { useEffect, useRef, useState } from 'react'
+import { LanguageToggle } from '@/components/language-toggle'
 import { navigation } from '@/lib/navigation'
 
 export const Navigation: React.FC = () => {
   const ref = useRef<HTMLElement>(null)
   const [isIntersecting, setIntersecting] = useState(false)
+  const t = useTranslations('navigation')
 
   useEffect(() => {
     if (!ref.current) return
@@ -29,15 +32,18 @@ export const Navigation: React.FC = () => {
             : 'bg-zinc-900/500  border-zinc-800 '
         }`}>
         <div className='container flex flex-row-reverse items-center justify-between p-6 mx-auto'>
-          <div className='flex justify-between gap-8'>
-            {navigation.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className='duration-200 text-zinc-400 hover:text-zinc-100'>
-                {item.name}
-              </Link>
-            ))}
+          <div className='flex items-center gap-6'>
+            <div className='flex justify-between gap-8'>
+              {navigation.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className='duration-200 text-zinc-400 hover:text-zinc-100'>
+                  {t(item.key)}
+                </Link>
+              ))}
+            </div>
+            <LanguageToggle />
           </div>
 
           <Link

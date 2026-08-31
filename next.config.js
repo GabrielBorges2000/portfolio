@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+import createNextIntlPlugin from "next-intl/plugin";
+
+
 const nextConfig = {
   images: {
     qualities: [25, 50, 75, 100],
@@ -13,10 +16,12 @@ const nextConfig = {
       fullUrl: true,
     },
   },
-	transpilePackages: ["lucide-react"],
-	typescript: {
-		ignoreBuildErrors: true,
-	},
+  transpilePackages: ["lucide-react"],
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  allowedDevOrigins: ['*.codeborges.com'],
 };
 
-export default nextConfig;
+const withNextIntl = createNextIntlPlugin();
+export default withNextIntl(nextConfig);
