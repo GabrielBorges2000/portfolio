@@ -30,6 +30,9 @@ export async function generateMetadata(): Promise<Metadata> {
       url: 'https://github.com/GabrielBorges2000',
     },
     robots: 'index, follow',
+    verification: {
+      google: 'Zgdq1Ql5CZEAaWdsfIlQX9hv-YGPmf8NPyGx4i_GnTY',
+    },
   }
 }
 
