@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-const BASE_URL = 'https://portfolio.codeborges.com.br'
+const BASE_URL = 'https://portfolio.codeborges.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const routes = ['', '/projects', '/curriculum', '/contact', '/app-ads.txt', '/gabriel.pdf']
